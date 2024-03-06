@@ -102,8 +102,7 @@ const rowClass = () => {
 .container {
     display: flex;
     margin-top: 0;
-    max-width: 100vw;
-    height: calc(100% - 100px);
+    height: 100%;
     background: var(--surface-ground);
 }
 
@@ -120,7 +119,7 @@ const rowClass = () => {
 }
 
 .content {
-    flex: 100% 1 1;
+    flex: calc(100% - 360px) 1 1;
     height: 100%;
     padding: 4rem;
     max-width: 100vw;
