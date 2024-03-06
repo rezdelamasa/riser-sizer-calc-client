@@ -90,20 +90,6 @@ const selectItem = (fixture) => {
 </template>
 
 <style scoped>
-.sidebar {
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    min-width: 320px;
-    max-width: 400px;
-    transition: all 300ms ease-in-out;
-    overflow-y: hidden;
-    box-shadow: rgb(217, 221, 252) 0px 4px 50px 0px;
-    box-sizing: border-box;
-    padding: 20px 0 20px 20px;
-    background: white;
-}
-
 .favorite-button {
     position: absolute;
     top: 0.4rem;
