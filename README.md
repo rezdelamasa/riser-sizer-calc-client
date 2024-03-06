@@ -1,6 +1,21 @@
 # riser-size-calc
 
-This template should help get you started developing with Vue 3 in Vite.
+## Description
+
+A WIP app for calculating water service plumbing sizes for riser diagrams. 
+
+### How to use it
+
+Navigate to Calculator page. You'll see an empty table with a Source row. You'll also see a form for some initialization options like Initial Hot Load Value and Initial Cold Load Value. These fields are useful for setting initial load values. (Examples below)
+
+__Examples:__
+
+1. The branch currently being calculated is in the middle of a riser.
+2. The branch currently being calculated in a sub-branch of another branch.
+
+Once the branch has been initialized, you can begin to add fixtures to the branch. Click the __Add Fixture__ button and a sidebar will appear on the right. Here you can find a list of all the fixtures and a search bar for filtering. On this sidebar, you can also mark a fixture as a __Favorite__ if you need to use it often. There is another category called __Recents__ which will contain a list of the last 10 fixtures added. (Useful for quickly adding more of the same fixtures from within the branch but not used enough to warrant a favorite.)
+
+# Setup
 
 ## Recommended IDE Setup
 
