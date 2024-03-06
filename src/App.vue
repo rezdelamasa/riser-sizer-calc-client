@@ -35,6 +35,7 @@ header {
   z-index: 10;
   height: 100px;
 }
+
 h2 {
   font-style: italic;
 }
