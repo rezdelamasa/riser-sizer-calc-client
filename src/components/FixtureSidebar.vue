@@ -63,9 +63,7 @@ const clearSearchInput = () => {
 .sidebar {
     display: flex;
     flex-direction: column;
-    width: 30%;
-    min-width: 320px;
-    max-width: 400px;
+    width: 360px;
     transition: all 300ms ease-in-out;
     overflow-y: hidden;
     box-shadow: rgb(217, 221, 252) 0px 4px 50px 0px;
@@ -120,7 +118,7 @@ const clearSearchInput = () => {
 }
 
 .sidebar--closed {
-    margin: 0 -25vw 0 0;
+    margin: 0 -360px 0 0;
 }
 
 .sidebar--open {
