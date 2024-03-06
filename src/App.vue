@@ -4,14 +4,23 @@
 
 <template>
   <div class="wrapper">
-    <header>
-      <div>
-        <nav>
-          <RouterLink to="/">Home</RouterLink>
-          <RouterLink to="/about">About</RouterLink>
-        </nav>
+    <aside>
+      <h2>RiserSizer</h2>
+      <div class="links">
+        <RouterLink to="/" class="link">
+          <Button class="link__button" icon="pi pi-home" label="Home" text></Button>
+        </RouterLink>
+        <RouterLink to="/" class="link">
+          <Button class="link__button" icon="pi pi-user" label="Account" text></Button>
+        </RouterLink>
+        <RouterLink to="/calculator" class="link">
+          <Button class="link__button" icon="pi pi-book" label="Projects" text></Button>
+        </RouterLink>
+        <RouterLink to="/" class="link">
+          <Button class="link__button" icon="pi pi-cog" label="Settings" text></Button>
+        </RouterLink>
       </div>
-    </header>
+    </aside>
     <RouterView />
   </div>
 </template>
