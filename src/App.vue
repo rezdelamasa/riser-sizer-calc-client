@@ -13,8 +13,11 @@
         <RouterLink to="/" class="link">
           <Button class="link__button" icon="pi pi-user" label="Account" text></Button>
         </RouterLink>
-        <RouterLink to="/calculator" class="link">
+        <RouterLink to="/projects" class="link">
           <Button class="link__button" icon="pi pi-book" label="Projects" text></Button>
+        </RouterLink>
+        <RouterLink to="/calculator" class="link">
+          <Button class="link__button" icon="pi pi-book" label="Calculator" text></Button>
         </RouterLink>
         <RouterLink to="/" class="link">
           <Button class="link__button" icon="pi pi-cog" label="Settings" text></Button>
