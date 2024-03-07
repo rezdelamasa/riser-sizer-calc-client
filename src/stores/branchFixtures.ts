@@ -8,11 +8,25 @@ const sizes = sizesData.sizes
 const demands = ref(getDemands())
 
 export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
-    const branchFixtures = ref([])
+    const fixtures = ref([])
 
     const recents = ref([])
 
     const favorites = ref([])
+
+    const getFixtures = async (branchId) => {
+        try {
+          await fetch(`http://localhost:3000/branches?id=${branchId}`)
+            .then((response) => 
+              response.json()
+            )
+            .then((data) => {
+                fixtures.value = data[0].fixtures
+            })
+        } catch (error) {
+          console.error(error);
+        }
+      }
 
     const getGPM = (fu) => {
         for(let i = 0; i < demands.value.length - 1; i++) {
@@ -93,5 +107,5 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
         return favorites.value.some(fav => fav.name === fixture.name && fav.occupancy === fixture.occupancy && fav.fixtureType === fixture.fixtureType)
     }
 
-    return { branchFixtures, addFixture, recents, addToFavorites, favorites, isFavorited, updateLoads }
+    return { fixtures, addFixture, recents, addToFavorites, favorites, isFavorited, updateLoads, getFixtures }
 })
