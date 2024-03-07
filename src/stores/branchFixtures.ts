@@ -8,38 +8,7 @@ const sizes = sizesData.sizes
 const demands = ref(getDemands())
 
 export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
-    const branchFixtures = ref([{
-        "name": "Source",
-        "occupancy": "",
-        "fixtureType": "",
-        "slug": "",
-        "loadValues": {
-            "cold": 0,
-            "hot": 0,
-            "total": 0
-        },
-        "totals": {
-            "loadValues": {
-                "cold": 0,
-                "hot": 0,
-                "total": 0
-            },
-            "gpms": {
-                "cold": 0,
-                "hot": 0,
-                "total": 0
-            },
-            "sizes": {
-                "cold": 0,
-                "hot": 0,
-                "total": 0
-            }
-        },
-        "shorthand": {
-            "occupancy": "",
-            "fixtureType": ""
-        }
-    }])
+    const branchFixtures = ref([])
 
     const recents = ref([])
 
