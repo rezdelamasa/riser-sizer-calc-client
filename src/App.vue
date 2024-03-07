@@ -10,7 +10,7 @@
         <RouterLink to="/" class="link">
           <Button class="link__button" icon="pi pi-home" label="Home" text></Button>
         </RouterLink>
-        <RouterLink to="/" class="link">
+        <RouterLink to="/account" class="link">
           <Button class="link__button" icon="pi pi-user" label="Account" text></Button>
         </RouterLink>
         <RouterLink to="/projects" class="link">
@@ -19,7 +19,7 @@
         <RouterLink to="/calculator" class="link">
           <Button class="link__button" icon="pi pi-book" label="Calculator" text></Button>
         </RouterLink>
-        <RouterLink to="/" class="link">
+        <RouterLink to="/settings" class="link">
           <Button class="link__button" icon="pi pi-cog" label="Settings" text></Button>
         </RouterLink>
       </div>
