@@ -7,7 +7,7 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: HomeView
+      component: () => import('../views/ProjectsView.vue')
     },
     {
       path: '/about',
@@ -32,6 +32,22 @@ const router = createRouter({
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/ProjectsView.vue')
+    },
+    {
+      path: '/projects/:project_id',
+      name: 'project',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/ProjectView.vue')
+    },
+    {
+      path: '/projects/:id/risers/:riser_id',
+      name: 'risers',
+      // route level code-splitting
+      // this generates a separate chunk (About.[hash].js) for this route
+      // which is lazy-loaded when the route is visited.
+      component: () => import('../views/Calculator.vue')
     },
   ]
 })
