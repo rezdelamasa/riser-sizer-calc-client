@@ -7,8 +7,6 @@ const branchesStore = useBranchesStore()
 
 const { params, path } = useRoute()
 
-console.log(useRoute())
-
 onMounted(async () => {
     await branchesStore.getBranches(params.riser_id)
 })
