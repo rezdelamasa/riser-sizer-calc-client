@@ -94,5 +94,1014 @@
                 "hot": "1\""
             }
         }
-    ] 
+    ],
+    "branches": [
+        {
+            "id": "branch-1234",
+            "riserId": "riser-1234",
+            "label": "1",
+            "startingFloor": "3",
+            "fixtures": [
+                {
+                    "name": "Source",
+                    "occupancy": "",
+                    "fixtureType": "",
+                    "slug": "",
+                    "loadValues": {
+                        "cold": 0,
+                        "hot": 0,
+                        "total": 0
+                    },
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": 0
+                        }
+                    },
+                    "shorthand": {
+                        "occupancy": "",
+                        "fixtureType": ""
+                    }
+                },
+                {
+                    "id": "c83033d0-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c86bdd40-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 8.1,
+                            "hot": 4.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c88b7330-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 5.4,
+                            "hot": 3,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c8a95b70-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 2.7,
+                            "hot": 1.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "branch-4567",
+            "riserId": "riser-1234",
+            "label": "2",
+            "startingFloor": "3",
+            "fixtures": [
+                {
+                    "name": "Source",
+                    "occupancy": "",
+                    "fixtureType": "",
+                    "slug": "",
+                    "loadValues": {
+                        "cold": 0,
+                        "hot": 0,
+                        "total": 0
+                    },
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": 0
+                        }
+                    },
+                    "shorthand": {
+                        "occupancy": "",
+                        "fixtureType": ""
+                    }
+                },
+                {
+                    "id": "c83033d0-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c86bdd40-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 8.1,
+                            "hot": 4.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c88b7330-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 5.4,
+                            "hot": 3,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c8a95b70-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 2.7,
+                            "hot": 1.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "branch-8901",
+            "riserId": "riser-1234",
+            "label": "3",
+            "startingFloor": "3",
+            "fixtures": [
+                {
+                    "name": "Source",
+                    "occupancy": "",
+                    "fixtureType": "",
+                    "slug": "",
+                    "loadValues": {
+                        "cold": 0,
+                        "hot": 0,
+                        "total": 0
+                    },
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": 0
+                        }
+                    },
+                    "shorthand": {
+                        "occupancy": "",
+                        "fixtureType": ""
+                    }
+                },
+                {
+                    "id": "c83033d0-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c86bdd40-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 8.1,
+                            "hot": 4.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c88b7330-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 5.4,
+                            "hot": 3,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c8a95b70-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 2.7,
+                            "hot": 1.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                }
+            ]
+        },
+        {
+            "riserId": "riser-1234",
+            "label": "4",
+            "startingFloor": "3",
+            "fixtures": [
+                {
+                    "name": "Source",
+                    "occupancy": "",
+                    "fixtureType": "",
+                    "slug": "",
+                    "loadValues": {
+                        "cold": 0,
+                        "hot": 0,
+                        "total": 0
+                    },
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": 0
+                        }
+                    },
+                    "shorthand": {
+                        "occupancy": "",
+                        "fixtureType": ""
+                    }
+                },
+                {
+                    "id": "c83033d0-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c86bdd40-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 8.1,
+                            "hot": 4.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c88b7330-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 5.4,
+                            "hot": 3,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c8a95b70-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 2.7,
+                            "hot": 1.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "branch-6789",
+            "riserId": "riser-1234",
+            "label": "5",
+            "startingFloor": "3",
+            "fixtures": [
+                {
+                    "name": "Source",
+                    "occupancy": "",
+                    "fixtureType": "",
+                    "slug": "",
+                    "loadValues": {
+                        "cold": 0,
+                        "hot": 0,
+                        "total": 0
+                    },
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": 0
+                        }
+                    },
+                    "shorthand": {
+                        "occupancy": "",
+                        "fixtureType": ""
+                    }
+                },
+                {
+                    "id": "c83033d0-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c86bdd40-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 8.1,
+                            "hot": 4.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c88b7330-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 5.4,
+                            "hot": 3,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c8a95b70-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 2.7,
+                            "hot": 1.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                }
+            ]
+        },
+        {
+            "id": "branch-0123",
+            "riserId": "riser-1234",
+            "label": "6",
+            "startingFloor": "3",
+            "fixtures": [
+                {
+                    "name": "Source",
+                    "occupancy": "",
+                    "fixtureType": "",
+                    "slug": "",
+                    "loadValues": {
+                        "cold": 0,
+                        "hot": 0,
+                        "total": 0
+                    },
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": 0
+                        }
+                    },
+                    "shorthand": {
+                        "occupancy": "",
+                        "fixtureType": ""
+                    }
+                },
+                {
+                    "id": "c83033d0-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 10.8,
+                            "hot": 6,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c86bdd40-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 8.1,
+                            "hot": 4.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c88b7330-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 5.4,
+                            "hot": 3,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                },
+                {
+                    "id": "c8a95b70-dca9-11ee-9aad-818619e36500",
+                    "totals": {
+                        "loadValues": {
+                            "cold": 2.7,
+                            "hot": 1.5,
+                            "total": 0
+                        },
+                        "gpms": {
+                            "cold": 0,
+                            "hot": 0,
+                            "total": 0
+                        },
+                        "sizes": {
+                            "cold": "3/4\"",
+                            "hot": "3/4\"",
+                            "total": ""
+                        }
+                    },
+                    "name": "Bathroom Group",
+                    "occupancy": "Private",
+                    "fixtureType": "Flush Tank",
+                    "loadValues": {
+                        "cold": 2.7,
+                        "hot": 1.5,
+                        "total": 3.6
+                    },
+                    "shorthand": {
+                        "occupancy": "Pr.",
+                        "fixtureType": "FT"
+                    }
+                }
+            ]
+        }
+    ]
 }
