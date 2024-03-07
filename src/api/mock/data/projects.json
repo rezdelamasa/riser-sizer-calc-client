@@ -32,5 +32,67 @@
             "floors": 50,
             "risers": 9
         }
-    ]     
+    ],
+    "risers": [
+        {
+            "id": "riser-1234",
+            "projectId": "1234",
+            "label": "P1",
+            "sourceFloor": "3",
+            "totalSizes": {
+                "cold": "2\"",
+                "hot": "1 1/4\""
+            }
+        },
+        {
+            "id": "riser-4567",
+            "projectId": "1234",
+            "label": "P2",
+            "sourceFloor": "3",
+            "totalSizes": {
+                "cold": "2\"",
+                "hot": "1 1/4\""
+            }
+        },
+        {
+            "id": "riser-8901",
+            "projectId": "1234",
+            "label": "P3",
+            "sourceFloor": "3",
+            "totalSizes": {
+                "cold": "2\"",
+                "hot": "1 1/4\""
+            }
+        },
+        {
+            "id": "riser-2345",
+            "projectId": "1234",
+            "label": "P4",
+            "sourceFloor": "3",
+            "totalSizes": {
+                "cold": "2\"",
+                "hot": "1 1/4\""
+            }
+        },
+        {
+            "id": "riser-6789",
+            "projectId": "1234",
+            "label": "P5",
+            "sourceFloor": "4",
+            "totalSizes": {
+                "cold": "1 1/5\"",
+                "hot": "1\""
+            }
+        },
+        {
+            "id": "riser-0123",
+            "projectId": "1234",
+            "label": "P6",
+            "sourceFloor": "7",
+            "totalSizes": {
+                "cold": "1 1/2\"",
+                "hot": "1\""
+            }
+        }
+    ] 
 }
