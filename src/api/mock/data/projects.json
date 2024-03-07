@@ -1,0 +1,36 @@
+{
+    "projects": [
+        {
+            "id": "1234",
+            "name": "Childhood Home",
+            "address": "165 Oakland Ave, Staten Island, NY 10310",
+            "type": "Residential",
+            "floors": 20,
+            "risers": 4
+        },
+        {
+            "id": "5678",
+            "name": "Home",
+            "address": "26 Calcagno Ct, Staten Island, NY 10314",
+            "type": "Residential",
+            "floors": 30,
+            "risers": 6
+        },
+        {
+            "id": "9012",
+            "name": "200 Park Ave S",
+            "address": "200 Park Ave S, New York, NY 10003",
+            "type": "Commercial",
+            "floors": 45,
+            "risers": 8
+        },
+        {
+            "id": "3456",
+            "name": "The Epic",
+            "address": "16 W 32nd St, New York, NY 10001",
+            "type": "Commercial",
+            "floors": 50,
+            "risers": 9
+        }
+    ]     
+}
