@@ -10,29 +10,7 @@ defineProps({
 const fixtureSidebarStore = useFixtureSidebarStore()
 const branchFixturesStore = useBranchFixturesStore()
 
-const handleWindowResize = () => {
-    const sidebar = document.querySelector('.p-sidebar')
-    if (!sidebar) return
-    console.log(sidebar.offsetWidth)
-    fixtureSidebarStore.setWidth(sidebar.offsetWidth)
-}
-
-
-window.addEventListener("resize", handleWindowResize);
-
-const initHotValue = ref(0)
-const initColdValue = ref(0)
-
-const fixtureFilterText = ref("")
-
-const { fixtures } = fixturesData
-
-const filteredFixturesList = computed(() => {
-    if (fixtureFilterText.value === "") return fixtures
-    return fixtures.filter(fixture =>
-        fixture.name.toLowerCase().includes(fixtureFilterText.value.toLowerCase())
-    )
-})
+const { addFixture } = useBranchFixturesStore()
 
 const selectItem = (fixture) => {
     branchFixturesStore.addFixture(fixture, initColdValue.value, initHotValue.value)
