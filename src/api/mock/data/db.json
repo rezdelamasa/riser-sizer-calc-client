@@ -1,0 +1,399 @@
+{
+  "projects": [
+    {
+      "id": "1234",
+      "name": "Childhood Home",
+      "address": "165 Oakland Ave, Staten Island, NY 10310",
+      "type": "Residential",
+      "floors": 20,
+      "risers": 4
+    },
+    {
+      "id": "5678",
+      "name": "Home",
+      "address": "26 Calcagno Ct, Staten Island, NY 10314",
+      "type": "Residential",
+      "floors": 30,
+      "risers": 6
+    },
+    {
+      "id": "9012",
+      "name": "200 Park Ave S",
+      "address": "200 Park Ave S, New York, NY 10003",
+      "type": "Commercial",
+      "floors": 45,
+      "risers": 8
+    },
+    {
+      "id": "3456",
+      "name": "The Epic",
+      "address": "16 W 32nd St, New York, NY 10001",
+      "type": "Commercial",
+      "floors": 50,
+      "risers": 9
+    }
+  ],
+  "risers": [
+    {
+      "id": "riser-1234",
+      "projectId": "1234",
+      "label": "P1",
+      "sourceFloor": "3",
+      "totalSizes": {
+        "cold": "2\"",
+        "hot": "1 1/4\""
+      }
+    },
+    {
+      "id": "riser-4567",
+      "projectId": "1234",
+      "label": "P2",
+      "sourceFloor": "3",
+      "totalSizes": {
+        "cold": "2\"",
+        "hot": "1 1/4\""
+      }
+    },
+    {
+      "id": "riser-8901",
+      "projectId": "1234",
+      "label": "P3",
+      "sourceFloor": "3",
+      "totalSizes": {
+        "cold": "2\"",
+        "hot": "1 1/4\""
+      }
+    },
+    {
+      "id": "riser-2345",
+      "projectId": "1234",
+      "label": "P4",
+      "sourceFloor": "3",
+      "totalSizes": {
+        "cold": "2\"",
+        "hot": "1 1/4\""
+      }
+    },
+    {
+      "id": "riser-6789",
+      "projectId": "1234",
+      "label": "P5",
+      "sourceFloor": "4",
+      "totalSizes": {
+        "cold": "1 1/5\"",
+        "hot": "1\""
+      }
+    },
+    {
+      "id": "riser-0123",
+      "projectId": "1234",
+      "label": "P6",
+      "sourceFloor": "7",
+      "totalSizes": {
+        "cold": "1 1/2\"",
+        "hot": "1\""
+      }
+    }
+  ],
+  "branches": [
+    {
+      "id": "branch-1234",
+      "riserId": "riser-1234",
+      "label": "1",
+      "startingFloor": "3"
+    },
+    {
+      "id": "branch-4567",
+      "riserId": "riser-1234",
+      "label": "2",
+      "startingFloor": "3"
+    },
+    {
+      "id": "branch-8901",
+      "riserId": "riser-1234",
+      "label": "3",
+      "startingFloor": "3"
+    },
+    {
+      "riserId": "riser-1234",
+      "label": "4",
+      "startingFloor": "3",
+      "id": "0519"
+    },
+    {
+      "id": "branch-6789",
+      "riserId": "riser-1234",
+      "label": "5",
+      "startingFloor": "3"
+    },
+    {
+      "id": "branch-0123",
+      "riserId": "riser-1234",
+      "label": "6",
+      "startingFloor": "3"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "fixture-1234",
+      "branchId": "branch-1234",
+      "name": "Source",
+      "occupancy": "",
+      "fixtureType": "",
+      "slug": "",
+      "loadValues": {
+        "cold": 0,
+        "hot": 0,
+        "total": 0
+      },
+      "shorthand": {
+        "occupancy": "",
+        "fixtureType": ""
+      }
+    },
+    {
+      "id": "5b6998e0-dd85-11ee-9d65-1fb1c297f15e",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flushometer Valve",
+      "loadValues": {
+        "cold": 6,
+        "hot": 3,
+        "total": 8
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "5c7dc800-dd85-11ee-9d65-1fb1c297f15e",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flushometer Valve",
+      "loadValues": {
+        "cold": 6,
+        "hot": 3,
+        "total": 8
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "5e029340-dd85-11ee-9d65-1fb1c297f15e",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flushometer Valve",
+      "loadValues": {
+        "cold": 6,
+        "hot": 3,
+        "total": 8
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "5f3546e0-dd85-11ee-9d65-1fb1c297f15e",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flushometer Valve",
+      "loadValues": {
+        "cold": 6,
+        "hot": 3,
+        "total": 8
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "61489680-dd85-11ee-9d65-1fb1c297f15e",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flushometer Valve",
+      "loadValues": {
+        "cold": 6,
+        "hot": 3,
+        "total": 8
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "63103720-dd85-11ee-9d65-1fb1c297f15e",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flushometer Valve",
+      "loadValues": {
+        "cold": 6,
+        "hot": 3,
+        "total": 8
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "68268d90-dd85-11ee-9d65-1fb1c297f15e",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flushometer Valve",
+      "loadValues": {
+        "cold": 6,
+        "hot": 3,
+        "total": 8
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "22e1e5d0-dd86-11ee-98f1-37b9ad5c2a5a",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flush Tank",
+      "loadValues": {
+        "cold": 2.7,
+        "hot": 1.5,
+        "total": 3.6
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FT"
+      }
+    },
+    {
+      "id": "36dad010-dd86-11ee-98f1-37b9ad5c2a5a",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flush Tank",
+      "loadValues": {
+        "cold": 2.7,
+        "hot": 1.5,
+        "total": 3.6
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FT"
+      }
+    },
+    {
+      "id": "2f272d20-ddc0-11ee-98f1-37b9ad5c2a5a",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flushometer Valve",
+      "loadValues": {
+        "cold": 6,
+        "hot": 3,
+        "total": 8
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "b4b17760-ddc1-11ee-98f1-37b9ad5c2a5a",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flush Tank",
+      "loadValues": {
+        "cold": 2.7,
+        "hot": 1.5,
+        "total": 3.6
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FT"
+      }
+    },
+    {
+      "id": "0b6d4b10-ddc2-11ee-a32a-5720e3b09734",
+      "branchId": "branch-1234",
+      "name": "Water Closet",
+      "occupancy": "Public",
+      "fixtureType": "Flushometer Valve",
+      "slug": "water-closet-public-flushometer-valve",
+      "loadValues": {
+        "cold": 10,
+        "hot": 0,
+        "total": 10
+      },
+      "shorthand": {
+        "occupancy": "Pu.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "12f00da0-ddc2-11ee-a4fa-758ebcdb4b7e",
+      "branchId": "branch-1234",
+      "name": "Water Closet",
+      "occupancy": "Public",
+      "fixtureType": "Flushometer Valve",
+      "slug": "water-closet-public-flushometer-valve",
+      "loadValues": {
+        "cold": 10,
+        "hot": 0,
+        "total": 10
+      },
+      "shorthand": {
+        "occupancy": "Pu.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "14565460-ddc2-11ee-a4fa-758ebcdb4b7e",
+      "branchId": "branch-1234",
+      "name": "Water Closet",
+      "occupancy": "Public",
+      "fixtureType": "Flushometer Tank",
+      "slug": "water-closet-public-flushometer-tank",
+      "loadValues": {
+        "cold": 5,
+        "hot": 0,
+        "total": 5
+      },
+      "shorthand": {
+        "occupancy": "Pu.",
+        "fixtureType": "FT"
+      }
+    },
+    {
+      "id": "20a2fb10-ddc2-11ee-a4fa-758ebcdb4b7e",
+      "branchId": "branch-1234",
+      "name": "Washing Machine (15 lb)",
+      "occupancy": "Public",
+      "fixtureType": "Automatic",
+      "loadValues": {
+        "cold": 3,
+        "hot": 3,
+        "total": 4
+      },
+      "shorthand": {
+        "occupancy": "Pu.",
+        "fixtureType": "Auto",
+        "name": "Wash. Mach. 15lb"
+      }
+    }
+  ]
+}
