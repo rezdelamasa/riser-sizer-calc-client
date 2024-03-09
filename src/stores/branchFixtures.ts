@@ -69,7 +69,7 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
         }
       }
 
-    const getGPM = (fu) => {
+    const getSize = (fu) => {
         for(let i = 0; i < demands.value.length - 1; i++) {
             if(fu >= demands.value[i] && fu < demands.value[i + 1]) {
                 return sizes[i]
