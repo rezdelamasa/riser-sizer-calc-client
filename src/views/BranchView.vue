@@ -56,9 +56,9 @@ const rowClass = () => {
             </template>
         </Card>
         <div class="workspace">
-            <template v-if="fixtures.length">
+            <template v-if="calculatedFixtures.length">
                 <DataTable 
-                    :value="fixtures" 
+                    :value="calculatedFixtures" 
                     tableStyle="min-width: 50rem"
                     class="table"
                     :rowClass="rowClass"
