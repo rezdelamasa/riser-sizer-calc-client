@@ -2,24 +2,9 @@
 import { ref, computed } from 'vue'
 import fixturesData from "../data/fixtures.json"
 import { useFixtureSidebarStore } from '@/stores/fixtureSidebar'
-import { useBranchFixturesStore } from '@/stores/branchFixtures'
 import FixtureSelector from './FixtureSelector.vue'
 
 const fixtureSidebarStore = useFixtureSidebarStore()
-const branchFixturesStore = useBranchFixturesStore()
-
-const handleWindowResize = () => {
-    const sidebar = document.querySelector('.p-sidebar')
-    if (!sidebar) return
-    console.log(sidebar.offsetWidth)
-    fixtureSidebarStore.setWidth(sidebar.offsetWidth)
-}
-
-
-window.addEventListener("resize", handleWindowResize);
-
-const initHotValue = ref(0)
-const initColdValue = ref(0)
 
 const fixtureFilterText = ref("")
 
@@ -64,6 +49,7 @@ const clearSearchInput = () => {
     display: flex;
     flex-direction: column;
     width: 360px;
+    height: 100vh;
     transition: all 300ms ease-in-out;
     overflow-y: hidden;
     box-shadow: rgb(217, 221, 252) 0px 4px 50px 0px;
