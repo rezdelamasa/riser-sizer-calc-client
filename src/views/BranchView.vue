@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { onMounted } from 'vue'
 import { useRoute } from 'vue-router';
 import { useFixtureSidebarStore } from '@/stores/fixtureSidebar'
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
