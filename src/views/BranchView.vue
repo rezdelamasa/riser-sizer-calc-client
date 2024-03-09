@@ -63,9 +63,15 @@ const rowClass = () => {
                     class="table"
                     :rowClass="rowClass"
                 >
-                    <Column field="name" header="Name"></Column>
-                    <Column field="occupancy" header="Occupancy"></Column>
-                    <Column field="fixtureType" header="Fixture Type"></Column>
+                    <Column field="name" header="Name">
+                        <template #body="slotProps">
+                            <div class="column-wrapper">
+                                <h4 class="riser__name">{{ slotProps.data.name }}</h4>
+                                <p class="riser__text">{{ slotProps.data.occupancy }}</p>
+                                <p class="riser__text">{{ slotProps.data.fixtureType }}</p>
+                            </div>
+                        </template>
+                    </Column>
                     <Column field="totals.loadValues.hot" header="Hot FUs"></Column>
                     <Column field="totals.loadValues.cold" header="Cold FUs"></Column>
                     <Column field="totals.sizes.hot" header="Hot Size"></Column>
