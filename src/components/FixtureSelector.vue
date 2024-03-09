@@ -1,7 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import fixturesData from "../data/fixtures.json"
-import { useFixtureSidebarStore } from '@/stores/fixtureSidebar'
+import { useRoute } from 'vue-router';
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
 
 defineProps({
