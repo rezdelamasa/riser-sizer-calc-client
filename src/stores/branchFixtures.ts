@@ -13,6 +13,43 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
     const recents = ref([])
 
     const favorites = ref([])
+    const calculatedFixtures = computed(() => {
+        let fixturesCopy = [...fixtures.value]
+        for(let i = fixturesCopy.length - 1; i >= 0; i--) {
+
+            fixturesCopy[i].totals = {
+                loadValues: {
+                    cold: 0,
+                    hot: 0,
+                },
+                sizes: {
+                    cold: "",
+                    hot: ""
+                }
+            }
+
+            const newColdTotal = fixturesCopy[i].loadValues.cold + 
+            (i == fixturesCopy.length - 1 
+                ? initColdValue.value
+                : fixturesCopy[i + 1].totals.loadValues.cold
+            )
+
+            fixturesCopy[i].totals.loadValues.cold = Math.round((newColdTotal + Number.EPSILON) * 100) / 100
+
+            fixturesCopy[i].totals.sizes.cold = getSize(newColdTotal)
+
+            const newHotTotal = fixturesCopy[i].loadValues.hot + 
+            (i == fixturesCopy.length - 1 
+                ? initHotValue.value 
+                : fixturesCopy[i + 1].totals.loadValues.hot
+            )
+
+            fixturesCopy[i].totals.loadValues.hot = Math.round((newHotTotal + Number.EPSILON) * 100) / 100
+
+            fixturesCopy[i].totals.sizes.hot = getSize(newHotTotal)
+        }
+        return fixturesCopy
+    })
 
     const getFixtures = async (branchId) => {
         try {
