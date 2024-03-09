@@ -62,7 +62,7 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
               response.json()
             )
             .then((data) => {
-                fixtures.value = data[0].fixtures
+                fixtures.value = data
             })
         } catch (error) {
           console.error(error);
