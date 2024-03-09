@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
+const { params } = useRoute()
 
 defineProps({
   filteredFixtures: Array,
