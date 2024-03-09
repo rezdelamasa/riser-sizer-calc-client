@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onMounted } from 'vue'
 import { useRoute } from 'vue-router';
+import { storeToRefs } from 'pinia'
 import { useFixtureSidebarStore } from '@/stores/fixtureSidebar'
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
 import FixtureSidebar from '../components/FixtureSidebar.vue'
