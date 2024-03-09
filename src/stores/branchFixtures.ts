@@ -57,7 +57,7 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
 
     const getFixtures = async (branchId) => {
         try {
-          await fetch(`http://localhost:3000/branches?id=${branchId}`)
+          await fetch(`http://localhost:3000/fixtures?branchId=${branchId}`)
             .then((response) => 
               response.json()
             )
