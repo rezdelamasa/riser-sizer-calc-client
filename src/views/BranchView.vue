@@ -17,13 +17,7 @@ onMounted(async () => {
     await getFixtures(params.branch_id)
 })
 
-const fixtures = computed(() => {
-  return branchFixturesStore.fixtures
-});
-
-
-const initHotValue = ref(0)
-const initColdValue = ref(0)
+const { fixtures, calculatedFixtures, initColdValue, initHotValue } = storeToRefs(useBranchFixturesStore())
 
 const rowClass = () => {
     return ['row'];
