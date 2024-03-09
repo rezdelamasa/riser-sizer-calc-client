@@ -13,7 +13,7 @@ const branchFixturesStore = useBranchFixturesStore()
 const { addFixture } = useBranchFixturesStore()
 
 const selectItem = (fixture) => {
-    branchFixturesStore.addFixture(fixture, initColdValue.value, initHotValue.value)
+    addFixture(fixture, params.branch_id)
 }
 </script>
 
