@@ -14,7 +14,7 @@ const { params } = useRoute()
 const { getFixtures } = useBranchFixturesStore()
 
 onMounted(async () => {
-    await branchFixturesStore.getFixtures(params.branch_id)
+    await getFixtures(params.branch_id)
 })
 
 const fixtures = computed(() => {
