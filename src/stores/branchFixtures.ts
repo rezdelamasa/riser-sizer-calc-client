@@ -13,6 +13,10 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
     const recents = ref([])
 
     const favorites = ref([])
+
+    const initColdValue = ref(0)
+    const initHotValue = ref(0)
+
     const calculatedFixtures = computed(() => {
         let fixturesCopy = [...fixtures.value]
         for(let i = fixturesCopy.length - 1; i >= 0; i--) {
