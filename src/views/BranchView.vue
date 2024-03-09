@@ -137,7 +137,8 @@ const rowClass = () => {
 
 .content {
     flex: calc(100% - 360px) 1 1;
-    height: 100%;
+    height: 100vh;
+    overflow: auto;
     padding: 4rem;
     max-width: 100vw;
 }
