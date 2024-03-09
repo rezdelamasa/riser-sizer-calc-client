@@ -1,42 +1,18 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-import fixturesData from "../data/fixtures.json"
-import { useFixtureSidebarStore } from '@/stores/fixtureSidebar'
+import { useRoute } from 'vue-router';
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
+const { params } = useRoute()
 
 defineProps({
   filteredFixtures: Array,
 })
 
-const fixtureSidebarStore = useFixtureSidebarStore()
 const branchFixturesStore = useBranchFixturesStore()
 
-const handleWindowResize = () => {
-    const sidebar = document.querySelector('.p-sidebar')
-    if (!sidebar) return
-    console.log(sidebar.offsetWidth)
-    fixtureSidebarStore.setWidth(sidebar.offsetWidth)
-}
-
-
-window.addEventListener("resize", handleWindowResize);
-
-const initHotValue = ref(0)
-const initColdValue = ref(0)
-
-const fixtureFilterText = ref("")
-
-const { fixtures } = fixturesData
-
-const filteredFixturesList = computed(() => {
-    if (fixtureFilterText.value === "") return fixtures
-    return fixtures.filter(fixture =>
-        fixture.name.toLowerCase().includes(fixtureFilterText.value.toLowerCase())
-    )
-})
+const { addFixture } = useBranchFixturesStore()
 
 const selectItem = (fixture) => {
-    branchFixturesStore.addFixture(fixture, initColdValue.value, initHotValue.value)
+    addFixture(fixture, params.branch_id)
 }
 </script>
 

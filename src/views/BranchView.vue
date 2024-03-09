@@ -1,6 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue'
+import { onMounted } from 'vue'
 import { useRoute } from 'vue-router';
+import { storeToRefs } from 'pinia'
 import { useFixtureSidebarStore } from '@/stores/fixtureSidebar'
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
 import FixtureSidebar from '../components/FixtureSidebar.vue'
@@ -8,19 +9,15 @@ import FixtureSidebar from '../components/FixtureSidebar.vue'
 const fixtureSidebarStore = useFixtureSidebarStore()
 const branchFixturesStore = useBranchFixturesStore()
 
-const { params, path } = useRoute()
+const { params } = useRoute()
+
+const { getFixtures } = useBranchFixturesStore()
 
 onMounted(async () => {
-    await branchFixturesStore.getFixtures(params.branch_id)
+    await getFixtures(params.branch_id)
 })
 
-const fixtures = computed(() => {
-  return branchFixturesStore.fixtures
-});
-
-
-const initHotValue = ref(0)
-const initColdValue = ref(0)
+const { fixtures, calculatedFixtures, initColdValue, initHotValue } = storeToRefs(useBranchFixturesStore())
 
 const rowClass = () => {
     return ['row'];
@@ -56,16 +53,22 @@ const rowClass = () => {
             </template>
         </Card>
         <div class="workspace">
-            <template v-if="fixtures.length">
+            <template v-if="calculatedFixtures.length">
                 <DataTable 
-                    :value="fixtures" 
+                    :value="calculatedFixtures" 
                     tableStyle="min-width: 50rem"
                     class="table"
                     :rowClass="rowClass"
                 >
-                    <Column field="name" header="Name"></Column>
-                    <Column field="occupancy" header="Occupancy"></Column>
-                    <Column field="fixtureType" header="Fixture Type"></Column>
+                    <Column field="name" header="Name">
+                        <template #body="slotProps">
+                            <div class="column-wrapper">
+                                <h4 class="riser__name">{{ slotProps.data.name }}</h4>
+                                <p class="riser__text">{{ slotProps.data.occupancy }}</p>
+                                <p class="riser__text">{{ slotProps.data.fixtureType }}</p>
+                            </div>
+                        </template>
+                    </Column>
                     <Column field="totals.loadValues.hot" header="Hot FUs"></Column>
                     <Column field="totals.loadValues.cold" header="Cold FUs"></Column>
                     <Column field="totals.sizes.hot" header="Hot Size"></Column>
@@ -131,7 +134,8 @@ const rowClass = () => {
 
 .content {
     flex: calc(100% - 360px) 1 1;
-    height: 100%;
+    height: 100vh;
+    overflow: auto;
     padding: 4rem;
     max-width: 100vw;
 }
