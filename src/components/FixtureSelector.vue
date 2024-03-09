@@ -7,7 +7,6 @@ defineProps({
   filteredFixtures: Array,
 })
 
-const fixtureSidebarStore = useFixtureSidebarStore()
 const branchFixturesStore = useBranchFixturesStore()
 
 const { addFixture } = useBranchFixturesStore()
