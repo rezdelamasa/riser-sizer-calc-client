@@ -9,7 +9,7 @@ import FixtureSidebar from '../components/FixtureSidebar.vue'
 const fixtureSidebarStore = useFixtureSidebarStore()
 const branchFixturesStore = useBranchFixturesStore()
 
-const { params, path } = useRoute()
+const { params } = useRoute()
 
 onMounted(async () => {
     await branchFixturesStore.getFixtures(params.branch_id)
