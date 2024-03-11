@@ -80,10 +80,10 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
 
     const addToRecents = (fixture) => {
         if(recents.value.some(rec => rec.name === fixture.name && rec.occupancy === fixture.occupancy && rec.fixtureType === fixture.fixtureType)) return
-        if(recents.value.length > 5) {
-            recents.value.shift()
+        if(recents.value.length === 5) {
+            recents.value.pop()
         }
-        recents.value.push(fixture)
+        recents.value.unshift(fixture)
     }
 
     const addToFavorites = (fixture) => {
@@ -118,6 +118,9 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
             branchId,
             ...fixture
         }
+        
+        addToRecents(fixture)
+
         await postFixture(newFixture, branchId)
     }
 
