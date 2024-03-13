@@ -72,7 +72,7 @@ const addToFavorites = (fixture) => {
                         <p>{{ fixture.fixtureType }}</p>
                         <p>{{ fixture.occupancy }}</p>
                     </div>
-                    <Button @click.stop="branchFixturesStore.addToFavorites(fixture)" class="favorite-button"
+                    <Button @click.stop="addToFavorites(fixture)" class="favorite-button"
                         :icon="{ 'pi pi-star-fill': isFavorited(fixture), 'pi pi-star': !isFavorited(fixture) }"
                         text rounded></Button>
                 </Button>
