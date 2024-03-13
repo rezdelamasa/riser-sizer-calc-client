@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
+import { storeToRefs } from 'pinia';
 const { params } = useRoute()
 
 defineProps({
@@ -9,7 +10,9 @@ defineProps({
 
 const branchFixturesStore = useBranchFixturesStore()
 
-const { addFixture } = useBranchFixturesStore()
+const { addFixture, isFavorited } = useBranchFixturesStore()
+
+const { favorites } = storeToRefs(useBranchFixturesStore())
 
 const selectItem = (fixture) => {
     addFixture(fixture, params.branch_id)
