@@ -90,7 +90,7 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
         if(isFavorited(fixture)) {
             favorites.value = favorites.value.filter(favorite => !(favorite.name == fixture.name && favorite.fixtureType == fixture.fixtureType && favorite.occupancy == fixture.occupancy))
         } else {
-        favorites.value.push(fixture)
+            favorites.value.push(fixture)
         }
     }
 
