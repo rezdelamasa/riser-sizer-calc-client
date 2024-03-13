@@ -18,6 +18,8 @@ import Sidebar from 'primevue/sidebar';
 import InputText from 'primevue/inputtext';
 import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
+import Toast from 'primevue/toast';
+import ToastService from 'primevue/toastservice';
 
 
 import App from './App.vue'
@@ -27,6 +29,7 @@ const app = createApp(App)
 
 app.use(router)
 app.use(PrimeVue)
+app.use(ToastService)
 app.component('InputNumber', InputNumber)
 app.component('FloatLabel', FloatLabel)
 app.component('Card', Card)
@@ -39,6 +42,7 @@ app.component('Sidebar', Sidebar)
 app.component('InputText', InputText)
 app.component('Accordion', Accordion)
 app.component('AccordionTab', AccordionTab)
+app.component('Toast', Toast)
 app.use(createPinia())
 
 app.mount('#app')

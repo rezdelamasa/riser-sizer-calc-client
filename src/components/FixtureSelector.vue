@@ -1,7 +1,15 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router';
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
+import { storeToRefs } from 'pinia';
 const { params } = useRoute()
+
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
+
+const showToast = () => {
+    toast.add({ severity: 'warn', summary: 'Info', detail: 'You may only have a max of 5 favorites.', life: 5000 });
+};
 
 defineProps({
   filteredFixtures: Array,
@@ -9,10 +17,19 @@ defineProps({
 
 const branchFixturesStore = useBranchFixturesStore()
 
-const { addFixture } = useBranchFixturesStore()
+const { addFixture, isFavorited } = useBranchFixturesStore()
+
+const { favorites } = storeToRefs(useBranchFixturesStore())
 
 const selectItem = (fixture) => {
     addFixture(fixture, params.branch_id)
+}
+
+const addToFavorites = (fixture) => {
+    if(favorites.value.length === 5) {
+        return showToast()
+    }
+    branchFixturesStore.addToFavorites(fixture)
 }
 </script>
 
@@ -20,17 +37,17 @@ const selectItem = (fixture) => {
     <div class="fixtures-select">
         <Accordion :activeIndex="[2]" :multiple="true">
             <AccordionTab header="Favorites">
-                <p v-if="!branchFixturesStore.favorites.length">Add some fixtures to your Favorites!</p>
+                <p v-if="!favorites.length">Add some fixtures to your Favorites!</p>
                 <template v-else>
                     <Button @click="selectItem(fixture)" class="fixture"
-                    v-for="fixture in branchFixturesStore.favorites" :key="fixture.slug">
+                    v-for="fixture in favorites" :key="fixture.slug">
                         <div class="fixture-wrapper">
                             <h4 class="fixture__name">{{ fixture.name }}</h4>
                             <p>{{ fixture.fixtureType }}</p>
                             <p>{{ fixture.occupancy }}</p>
                         </div>
                         <Button @click.stop="branchFixturesStore.addToFavorites(fixture)" class="favorite-button"
-                            :icon="{ 'pi pi-star-fill': branchFixturesStore.isFavorited(fixture), 'pi pi-star': !branchFixturesStore.isFavorited(fixture) }"
+                            :icon="{ 'pi pi-star-fill': isFavorited(fixture), 'pi pi-star': !isFavorited(fixture) }"
                             text rounded></Button>
                     </Button>
                 </template>
@@ -56,8 +73,8 @@ const selectItem = (fixture) => {
                         <p>{{ fixture.fixtureType }}</p>
                         <p>{{ fixture.occupancy }}</p>
                     </div>
-                    <Button @click.stop="branchFixturesStore.addToFavorites(fixture)" class="favorite-button"
-                        :icon="{ 'pi pi-star-fill': branchFixturesStore.isFavorited(fixture), 'pi pi-star': !branchFixturesStore.isFavorited(fixture) }"
+                    <Button @click.stop="addToFavorites(fixture)" class="favorite-button"
+                        :icon="{ 'pi pi-star-fill': isFavorited(fixture), 'pi pi-star': !isFavorited(fixture) }"
                         text rounded></Button>
                 </Button>
             </AccordionTab>
