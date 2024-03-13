@@ -36,7 +36,7 @@ const addToFavorites = (fixture) => {
     <div class="fixtures-select">
         <Accordion :activeIndex="[2]" :multiple="true">
             <AccordionTab header="Favorites">
-                <p v-if="!branchFixturesStore.favorites.length">Add some fixtures to your Favorites!</p>
+                <p v-if="!favorites.length">Add some fixtures to your Favorites!</p>
                 <template v-else>
                     <Button @click="selectItem(fixture)" class="fixture"
                     v-for="fixture in favorites" :key="fixture.slug">
