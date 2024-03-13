@@ -39,7 +39,7 @@ const addToFavorites = (fixture) => {
                 <p v-if="!branchFixturesStore.favorites.length">Add some fixtures to your Favorites!</p>
                 <template v-else>
                     <Button @click="selectItem(fixture)" class="fixture"
-                    v-for="fixture in branchFixturesStore.favorites" :key="fixture.slug">
+                    v-for="fixture in favorites" :key="fixture.slug">
                         <div class="fixture-wrapper">
                             <h4 class="fixture__name">{{ fixture.name }}</h4>
                             <p>{{ fixture.fixtureType }}</p>
