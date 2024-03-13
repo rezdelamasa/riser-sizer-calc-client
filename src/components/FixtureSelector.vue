@@ -3,6 +3,12 @@ import { useRoute } from 'vue-router';
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
 import { storeToRefs } from 'pinia';
 const { params } = useRoute()
+import { useToast } from "primevue/usetoast";
+const toast = useToast();
+
+const showToast = () => {
+    toast.add({ severity: 'warn', summary: 'Info', detail: 'You may only have a max of 5 favorites.', life: 5000 });
+};
 
 defineProps({
   filteredFixtures: Array,
