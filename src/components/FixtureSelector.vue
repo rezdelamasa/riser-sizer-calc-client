@@ -23,6 +23,13 @@ const { favorites } = storeToRefs(useBranchFixturesStore())
 const selectItem = (fixture) => {
     addFixture(fixture, params.branch_id)
 }
+
+const addToFavorites = (fixture) => {
+    if(favorites.value.length === 5) {
+        return showToast()
+    }
+    branchFixturesStore.addToFavorites(fixture)
+}
 </script>
 
 <template>
