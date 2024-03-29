@@ -27,7 +27,11 @@ onMounted(async () => {
 
 const { fixtures, calculatedFixtures, initColdValue, initHotValue } = storeToRefs(useBranchFixturesStore())
 
-const rowClass = () => {
+const firstFixture = computed(() => {
+    return fixtures.value.slice(0, 1)
+})
+
+const rowClass = (data) => {
     return ['row'];
 };
 </script>
