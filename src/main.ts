@@ -20,6 +20,8 @@ import Accordion from 'primevue/accordion';
 import AccordionTab from 'primevue/accordiontab';
 import Toast from 'primevue/toast';
 import ToastService from 'primevue/toastservice';
+import InputGroup from 'primevue/inputgroup';
+import InputGroupAddon from 'primevue/inputgroupaddon';
 
 
 import App from './App.vue'
@@ -43,6 +45,8 @@ app.component('InputText', InputText)
 app.component('Accordion', Accordion)
 app.component('AccordionTab', AccordionTab)
 app.component('Toast', Toast)
+app.component('InputGroup', InputGroup)
+app.component('InputGroupAddon', InputGroupAddon)
 app.use(createPinia())
 
 app.mount('#app')
