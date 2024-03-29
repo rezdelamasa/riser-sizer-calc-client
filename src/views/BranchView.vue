@@ -6,7 +6,6 @@ import { useFixtureSidebarStore } from '@/stores/fixtureSidebar'
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
 import FixtureSidebar from '../components/FixtureSidebar.vue'
 
-const fixtureSidebarStore = useFixtureSidebarStore()
 const branchFixturesStore = useBranchFixturesStore()
 const { getFixtures } = useBranchFixturesStore()
 
