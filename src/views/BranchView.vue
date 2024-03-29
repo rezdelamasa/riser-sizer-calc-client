@@ -116,11 +116,26 @@ const rowClass = (data) => {
 </template>
 
 <style scoped>
+.table {
+    position: relative;
+}
+
+.card {
+    box-shadow: none;
+}
+
 .table:deep .row {
     animation: show 750ms 100ms cubic-bezier(0.38, 0.97, 0.56, 0.76) forwards;
     opacity: 0;
     height: 72px;
     position: relative;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
 }
 
 @keyframes show {
