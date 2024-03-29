@@ -34,6 +34,7 @@ const firstFixture = computed(() => {
 const rowClass = (data) => {
     return ['row'];
 };
+
 </script>
 
 <template>
@@ -66,50 +67,39 @@ const rowClass = (data) => {
                                     :min-fraction-digits="1" 
                                     :max-fraction-digits="1"
                                     placeholder="Initial Hot FUs"
-                    ></InputNumber>
+                                ></InputNumber>
                             </InputGroup>
                             <InputGroup class="input-group">
                                 <InputGroupAddon>
                                     Cold
                                 </InputGroupAddon>
-                    <InputNumber 
-                        id="init-value-input--cold"
-                        v-model="initColdValue" 
-                        @update:model-value="branchFixturesStore.updateLoads(initColdValue, initHotValue)"
-                        :min-fraction-digits="1" 
-                        :max-fraction-digits="1"
+                                <InputNumber 
+                                    id="init-value-input--cold"
+                                    v-model="initColdValue" 
+                                    @update:model-value="branchFixturesStore.updateLoads(initColdValue, initHotValue)"
+                                    :min-fraction-digits="1" 
+                                    :max-fraction-digits="1"
                                     placeholder="Initial Cold FUs"
-                    ></InputNumber>
+                                ></InputNumber>
                             </InputGroup>
                         <Button class="header__button">Add Fixture</Button>
                         </div>
                     </div>
-            </template>
-        </Card>
-        <div class="workspace">
-            <template v-if="calculatedFixtures.length">
-                <DataTable 
-                    :value="calculatedFixtures" 
-                    tableStyle="min-width: 50rem"
-                    class="table"
-                    :rowClass="rowClass"
-                >
-                    <Column field="name" header="Name">
-                        <template #body="slotProps">
-                            <div class="column-wrapper">
+                </template>
+                <Column field="name" header="Name">
+                    <template #body="slotProps">
+                        <div class="column-wrapper">
                             <h4 class="fixture__name">{{ slotProps.data.name }}</h4>
                             <p v-if="slotProps.data.occupancy" class="fixture__text">{{ slotProps.data.occupancy }} - {{ slotProps.data.fixtureType }}</p>
-                            </div>
-                        </template>
-                    </Column>
-                    <Column field="totals.loadValues.hot" header="Hot FUs"></Column>
-                    <Column field="totals.loadValues.cold" header="Cold FUs"></Column>
-                    <Column field="totals.sizes.hot" header="Hot Size"></Column>
-                    <Column field="totals.sizes.cold" header="Cold Size"></Column>
-                </DataTable>
-                <Button @click="fixtureSidebarStore.toggle" class="add-fixture-btn">Add Fixture</Button>
-            </template>
-        </div>
+                        </div>
+                    </template>
+                </Column>
+                <Column field="totals.loadValues.hot" header="Hot FUs"></Column>
+                <Column field="totals.loadValues.cold" header="Cold FUs"></Column>
+                <Column field="totals.sizes.hot" header="Hot Size"></Column>
+                <Column field="totals.sizes.cold" header="Cold Size"></Column>
+            </DataTable>
+        </template>
     </div>
     <FixtureSidebar></FixtureSidebar>
 </div>
