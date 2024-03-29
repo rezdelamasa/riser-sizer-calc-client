@@ -65,19 +65,25 @@ const rowClass = (data) => {
                                     @update:model-value="branchFixturesStore.updateLoads(initColdValue, initHotValue)"
                                     :min-fraction-digits="1" 
                                     :max-fraction-digits="1"
+                                    placeholder="Initial Hot FUs"
                     ></InputNumber>
-                    <label for="init-value-input--hot">Initial Hot Fixture Units</label>
-                </FloatLabel>
-                <FloatLabel class="init-value">
+                            </InputGroup>
+                            <InputGroup class="input-group">
+                                <InputGroupAddon>
+                                    Cold
+                                </InputGroupAddon>
                     <InputNumber 
                         id="init-value-input--cold"
                         v-model="initColdValue" 
                         @update:model-value="branchFixturesStore.updateLoads(initColdValue, initHotValue)"
                         :min-fraction-digits="1" 
                         :max-fraction-digits="1"
+                                    placeholder="Initial Cold FUs"
                     ></InputNumber>
-                    <label for="init-value-input--cold">Initial Cold Fixture Units</label>
-                </FloatLabel>
+                            </InputGroup>
+                        <Button class="header__button">Add Fixture</Button>
+                        </div>
+                    </div>
             </template>
         </Card>
         <div class="workspace">
