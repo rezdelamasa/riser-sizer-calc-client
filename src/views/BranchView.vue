@@ -97,9 +97,8 @@ const rowClass = (data) => {
                     <Column field="name" header="Name">
                         <template #body="slotProps">
                             <div class="column-wrapper">
-                                <h4 class="riser__name">{{ slotProps.data.name }}</h4>
-                                <p class="riser__text">{{ slotProps.data.occupancy }}</p>
-                                <p class="riser__text">{{ slotProps.data.fixtureType }}</p>
+                            <h4 class="fixture__name">{{ slotProps.data.name }}</h4>
+                            <p v-if="slotProps.data.occupancy" class="fixture__text">{{ slotProps.data.occupancy }} - {{ slotProps.data.fixtureType }}</p>
                             </div>
                         </template>
                     </Column>
