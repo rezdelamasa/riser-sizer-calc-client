@@ -38,17 +38,33 @@ const rowClass = (data) => {
 
 <template>
   <div class="container">
-    <div class="content">
-        <Card class="card">
-            <template #title>Branch Initialization</template>
-            <template #content>
-                <FloatLabel class="init-value">
-                    <InputNumber 
-                        id="init-value-input--hot"
-                        v-model="initHotValue" 
-                        @update:model-value="branchFixturesStore.updateLoads(initColdValue, initHotValue)"
-                        :min-fraction-digits="1" 
-                        :max-fraction-digits="1"
+    <div class="content" ref="content">
+        <template v-if="calculatedFixtures.length && firstFixture.length">
+            <DataTable 
+                ref="fixturesTable"
+                :value="calculatedFixtures" 
+                tableStyle="min-width: 50rem"
+                class="table"
+                :rowClass="(data) => rowClass(data)"
+            >
+                <template #header ref="Header">
+                    <div class="header-wrapper">
+                        <div class="header__text">
+                            <p class="header__values"><span class="header__values__title">Cold:</span> {{ firstFixture[0].totals.loadValues.cold }} / {{ firstFixture[0].totals.sizes.cold }}</p>
+                            <p class="header__values"><span class="header__values__title">Hot:</span> {{ firstFixture[0].totals.loadValues.hot }} / {{ firstFixture[0].totals.sizes.hot }}</p> 
+                        </div>
+                        <div class="header__actions">
+                            <p>Init. Values</p>
+                            <InputGroup class="input-group">
+                                <InputGroupAddon>
+                                    Hot
+                                </InputGroupAddon>
+                                <InputNumber 
+                                    id="init-value-input--hot"
+                                    v-model="initHotValue" 
+                                    @update:model-value="branchFixturesStore.updateLoads(initColdValue, initHotValue)"
+                                    :min-fraction-digits="1" 
+                                    :max-fraction-digits="1"
                     ></InputNumber>
                     <label for="init-value-input--hot">Initial Hot Fixture Units</label>
                 </FloatLabel>
