@@ -19,6 +19,10 @@ const headerHeight = ref(0)
 
 onMounted(async () => {
     await getFixtures(params.branch_id)
+    const header = fixturesTable.value.$el.querySelector('.p-datatable-header')
+    const table = fixturesTable.value.$el.querySelector('.p-datatable-table') 
+    headerHeight.value = header.offsetHeight
+    table.style = "padding-bottom: " + headerHeight.value + "px;"
 })
 
 const { fixtures, calculatedFixtures, initColdValue, initHotValue } = storeToRefs(useBranchFixturesStore())
