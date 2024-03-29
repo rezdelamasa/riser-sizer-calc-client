@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { ref, computed, onMounted } from 'vue'
 import { useRoute } from 'vue-router';
 import { storeToRefs } from 'pinia'
 import { useFixtureSidebarStore } from '@/stores/fixtureSidebar'
