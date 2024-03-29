@@ -12,7 +12,10 @@ const { getFixtures } = useBranchFixturesStore()
 
 const { params } = useRoute()
 
-const { getFixtures } = useBranchFixturesStore()
+
+const fixturesTable = ref(null)
+const headerHeight = ref(0)
+
 
 onMounted(async () => {
     await getFixtures(params.branch_id)
