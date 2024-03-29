@@ -168,28 +168,69 @@ const rowClass = (data) => {
     background: var(--surface-ground);
 }
 
-.add-fixture-btn {
-    margin: 2rem 0;
+.total-card-wrapper {
+    position: sticky;
+    top: 0rem;
+    z-index: 1000;
+    box-shadow: none;
+    background: var(--surface-ground);
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+    width: 100%;
+}
+
+.totalCard {
+    box-shadow: none;
+    width: 100%;
 }
 
 .init-value {
-    margin: 3rem 0;
+    margin: 1.5rem 0 0;
 }
 
-.init-value:last-child {
-    margin-bottom: 1rem;
+.table:deep(.row--first) {
+    width: 100%;
+    z-index: 1000;
+    background: white;
+}
+
+.table:deep(.row--first td) {
+    background: white;
+}
+
+.table:deep(.p-datatable-header) {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.table:deep(.p-datatable-wrapper) {
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+}
+
+.table:deep(.p-datatable-thead) {
+    /* position: sticky; */
+    top: 0;
+    z-index: 100;
 }
 
 .content {
+    display: flex;
+    flex-direction: column;
     flex: calc(100% - 360px) 1 1;
     height: 100vh;
-    overflow: auto;
-    padding: 4rem;
+    overflow: hidden;
+    padding: 3rem;
     max-width: 100vw;
+    gap: 3rem;
+    position: relative;
 }
 
 .workspace {
-    margin-top: 4rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -199,8 +240,17 @@ const rowClass = (data) => {
 .table {
     width: 100%;
     border-radius: 12px;
+    position: relative;
+    height: 100%;
     overflow: hidden;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+.table.flat {
+    box-shadow: none;
+}
+
+.table.flat:deep(tr) {
+    height: 3rem;
 }
 
 .table table {
@@ -210,5 +260,62 @@ const rowClass = (data) => {
 .table table tr {
     border: 1px solid #e2e8f0;
     border-collapse: collapse;
+}
+
+.total-card-wrapper:before {
+    content: "";
+    height: 3rem;
+    position: absolute;
+    top: -3rem;
+    background: var(--surface-ground);
+    width: 100%;
+    z-index: 10;
+}
+
+.total-card-wrapper:after {
+    content: "";
+    height: 3rem;
+    position: absolute;
+    bottom: -3rem;
+    background: var(--surface-ground);
+    width: 100%;
+    z-index: 10;
+}
+
+.column-wrapper * {
+    margin: 0.5rem 0;
+}
+
+.card-content-wrapper {
+    display: flex;
+    gap: 3rem;
+}
+
+.total-text {
+    font-weight: bold;
+}
+
+.header__values {
+    font-weight: normal;
+}
+
+.input-group {
+    width: auto;
+    height: 38px;
+}
+
+.header__actions {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+} 
+
+.header__text {
+    display: flex;
+    gap: 2rem;
+}
+
+.header__values__title {
+    font-weight: bold;
 }
 </style>
