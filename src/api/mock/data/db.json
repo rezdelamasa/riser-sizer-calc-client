@@ -135,23 +135,6 @@
   ],
   "fixtures": [
     {
-      "id": "fixture-1234",
-      "branchId": "branch-1234",
-      "name": "Source",
-      "occupancy": "",
-      "fixtureType": "",
-      "slug": "",
-      "loadValues": {
-        "cold": 0,
-        "hot": 0,
-        "total": 0
-      },
-      "shorthand": {
-        "occupancy": "",
-        "fixtureType": ""
-      }
-    },
-    {
       "id": "5b6998e0-dd85-11ee-9d65-1fb1c297f15e",
       "branchId": "branch-1234",
       "name": "Bathroom Group",
@@ -393,6 +376,55 @@
         "occupancy": "Pu.",
         "fixtureType": "Auto",
         "name": "Wash. Mach. 15lb"
+      }
+    },
+    {
+      "id": "787493d0-e30d-11ee-89ca-0336dba3a5da",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flush Tank",
+      "loadValues": {
+        "cold": 2.7,
+        "hot": 1.5,
+        "total": 3.6
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FT"
+      }
+    },
+    {
+      "id": "797784e0-e30d-11ee-89ca-0336dba3a5da",
+      "branchId": "branch-1234",
+      "name": "Bathtub",
+      "occupancy": "Private",
+      "fixtureType": "Faucet",
+      "slug": "bathtub-private-faucet",
+      "loadValues": {
+        "cold": 1,
+        "hot": 1,
+        "total": 1.4
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "Fa."
+      }
+    },
+    {
+      "id": "d837a730-e30d-11ee-89ca-0336dba3a5da",
+      "branchId": "branch-1234",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flush Tank",
+      "loadValues": {
+        "cold": 2.7,
+        "hot": 1.5,
+        "total": 3.6
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FT"
       }
     }
   ]
