@@ -8,6 +8,7 @@ import FixtureSidebar from '../components/FixtureSidebar.vue'
 
 const fixtureSidebarStore = useFixtureSidebarStore()
 const branchFixturesStore = useBranchFixturesStore()
+const { getFixtures } = useBranchFixturesStore()
 
 const { params } = useRoute()
 
