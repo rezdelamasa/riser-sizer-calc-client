@@ -11,10 +11,10 @@ const { getFixtures } = useBranchFixturesStore()
 
 const { params } = useRoute()
 
+const { toggle } = useFixtureSidebarStore()
 
 const fixturesTable = ref(null)
 const headerHeight = ref(0)
-
 
 onMounted(async () => {
     await getFixtures(params.branch_id)
@@ -34,6 +34,10 @@ const rowClass = (data) => {
     return ['row'];
 };
 
+const handleAddFixturesClick = () => {
+    toggle()
+}
+
 </script>
 
 <template>
@@ -47,7 +51,7 @@ const rowClass = (data) => {
                 class="table"
                 :rowClass="(data) => rowClass(data)"
             >
-                <template #header ref="Header">
+                <template #header>
                     <div class="header-wrapper">
                         <div class="header__text">
                             <p class="header__values"><span class="header__values__title">Cold:</span> {{ firstFixture[0].totals.loadValues.cold }} / {{ firstFixture[0].totals.sizes.cold }}</p>
@@ -81,7 +85,7 @@ const rowClass = (data) => {
                                     placeholder="Initial Cold FUs"
                                 ></InputNumber>
                             </InputGroup>
-                        <Button class="header__button">Add Fixture</Button>
+                        <Button @click="handleAddFixturesClick" class="header__button">Add Fixture</Button>
                         </div>
                     </div>
                 </template>
