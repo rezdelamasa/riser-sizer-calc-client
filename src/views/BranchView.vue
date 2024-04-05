@@ -97,12 +97,14 @@ const handleAddFixturesClick = () => {
                         </div>
                     </template>
                 </Column>
-                <Column field="totals.loadValues.hot" header="Hot FUs">
+                <Column field="totals.loadValues.cold" header="Cold Demand (FU)" class="cell--blue"></Column>
+                <Column field="totals.sizes.cold" header="Cold Size" class="cell--blue"></Column>
+                <Column field="totals.loadValues.hot" header="Hot Demand (FU)" class="cell--red">
                     <template #body="slotProps">
                         <p style="width: 100%; height: 100%; margin: 0;">{{ slotProps.data.loadValues.hot === 0 ? '-' : slotProps.data.totals.loadValues.hot}}</p>
                     </template>
                 </Column>
-                <Column field="totals.sizes.hot" header="Hot Size">
+                <Column field="totals.sizes.hot" header="Hot Size" class="cell--red">
                     <template #body="slotProps">
                         <p>{{ slotProps.data.loadValues.hot === 0 ? '-' : slotProps.data.totals.sizes.hot }}</p>
                     </template>
