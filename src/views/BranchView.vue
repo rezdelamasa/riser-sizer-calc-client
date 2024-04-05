@@ -109,8 +109,6 @@ const handleAddFixturesClick = () => {
                         <p>{{ slotProps.data.loadValues.hot === 0 ? '-' : slotProps.data.totals.sizes.hot }}</p>
                     </template>
                 </Column>
-                <Column field="totals.loadValues.cold" header="Cold FUs"></Column>
-                <Column field="totals.sizes.cold" header="Cold Size"></Column>
             </DataTable>
         </template>
     </div>
@@ -320,5 +318,13 @@ const handleAddFixturesClick = () => {
 
 .header__values__title {
     font-weight: bold;
+}
+
+.table:deep(td.cell--red) {
+    background: rgb(255, 242, 242);
+}
+
+.table:deep(td.cell--blue) {
+    background: rgb(242, 247, 255);
 }
 </style>
