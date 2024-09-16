@@ -5,6 +5,7 @@ import { storeToRefs } from 'pinia'
 import { useFixtureSidebarStore } from '@/stores/fixtureSidebar'
 import { useBranchFixturesStore } from '@/stores/branchFixtures'
 import FixtureSidebar from '../components/FixtureSidebar.vue'
+import BackLink from '../components/BackLink.vue'
 
 const branchFixturesStore = useBranchFixturesStore()
 const { getFixtures } = useBranchFixturesStore()
@@ -15,6 +16,7 @@ const { toggle } = useFixtureSidebarStore()
 
 const fixturesTable = ref(null)
 const headerHeight = ref(0)
+const backLink = ref("")
 
 onMounted(async () => {
     await getFixtures(params.branch_id)
@@ -22,6 +24,8 @@ onMounted(async () => {
     const table = fixturesTable.value.$el.querySelector('.p-datatable-table') 
     headerHeight.value = header.offsetHeight
     table.style = "padding-bottom: " + headerHeight.value + "px;"
+
+    backLink.value = "/projects/" + params.id + "/risers/" + params.riser_id
 })
 
 const { fixtures, calculatedFixtures, initColdValue, initHotValue } = storeToRefs(useBranchFixturesStore())
@@ -43,6 +47,7 @@ const handleAddFixturesClick = () => {
 <template>
   <div class="container">
     <div class="content" ref="content">
+        <BackLink :back-link="backLink" text="All Branches"/>
         <template v-if="calculatedFixtures.length && firstFixture.length">
             <DataTable 
                 ref="fixturesTable"
@@ -92,7 +97,13 @@ const handleAddFixturesClick = () => {
                 <Column field="name" header="Name">
                     <template #body="slotProps">
                         <div class="column-wrapper">
-                            <h4 class="fixture__name">{{ slotProps.data.name }}</h4>
+                            <p>{{ slotProps.data.name }}</p>
+                        </div>
+                    </template>
+                </Column>
+                <Column field="type" header="Type">
+                    <template #body="slotProps">
+                        <div class="column-wrapper">
                             <p v-if="slotProps.data.occupancy" class="fixture__text">{{ slotProps.data.occupancy }} - {{ slotProps.data.fixtureType }}</p>
                         </div>
                     </template>
@@ -227,7 +238,7 @@ const handleAddFixturesClick = () => {
     overflow: hidden;
     padding: 3rem;
     max-width: 100vw;
-    gap: 3rem;
+    gap: 2rem;
     position: relative;
 }
 

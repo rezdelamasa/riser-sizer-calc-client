@@ -2,6 +2,7 @@
 import { ref, computed, onMounted } from 'vue'
 import { useProjectStore } from "@/stores/project"
 import { useRoute } from 'vue-router';
+import BackLink from '../components/BackLink.vue'
 
 const projectStore = useProjectStore()
 
@@ -17,6 +18,7 @@ const project = computed(() => {
 </script>
 <template>
     <main>
+        <BackLink to="/projects" text="All Projects" />
         <h1>Risers</h1>
         <div class="content">
             <Button class="create-button" icon="pi pi-plus" label="Create Riser"></Button>

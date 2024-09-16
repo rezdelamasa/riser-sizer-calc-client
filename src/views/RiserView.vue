@@ -2,13 +2,17 @@
 import { ref, computed, onMounted } from 'vue'
 import { useBranchesStore } from "@/stores/branches"
 import { useRoute } from 'vue-router';
+import BackLink from '@/components/BackLink.vue';
 
 const branchesStore = useBranchesStore()
 
 const { params, path } = useRoute()
 
+const backLink = ref("")
+
 onMounted(async () => {
     await branchesStore.getBranches(params.riser_id)
+    backLink.value = "/projects/" + params.id
 })
 
 const branches = computed(() => {
@@ -17,6 +21,7 @@ const branches = computed(() => {
 </script>
 <template>
     <main>
+        <BackLink :back-link="backLink" text="All Risers"/>
         <h1>Branches</h1>
         <div class="content">
             <Button class="create-button" icon="pi pi-plus" label="Create Branch"></Button>
