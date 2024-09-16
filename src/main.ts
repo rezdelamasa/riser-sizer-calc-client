@@ -5,6 +5,7 @@ import { createPinia } from 'pinia'
 import PrimeVue from 'primevue/config'
 
 import 'primevue/resources/themes/aura-light-green/theme.css'
+import 'primeflex/primeflex.css' 
 
 import InputNumber from 'primevue/inputnumber'
 import FloatLabel from 'primevue/floatlabel'
