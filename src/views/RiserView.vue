@@ -3,16 +3,16 @@ import { ref, computed, onMounted } from 'vue'
 import { useBranchesStore } from "@/stores/branches"
 import { useRoute } from 'vue-router';
 import BackLink from '@/components/BackLink.vue';
+import TitleHeader from '@/components/TitleHeader.vue';
 
 const branchesStore = useBranchesStore()
 
-const { params, path } = useRoute()
-
 const backLink = ref("")
+const { params, path } = useRoute()
 
 onMounted(async () => {
     await branchesStore.getBranches(params.riser_id)
-    backLink.value = "/projects/" + params.id
+    backLink.value = "/projects/" + params.project_id
 })
 
 const branches = computed(() => {
@@ -21,6 +21,7 @@ const branches = computed(() => {
 </script>
 <template>
     <main>
+        <TitleHeader></TitleHeader>
         <BackLink :back-link="backLink" text="All Risers"/>
         <h1>Branches</h1>
         <div class="content">
@@ -56,7 +57,7 @@ const branches = computed(() => {
 
 <style scoped>
 main {
-    padding: 2rem 4rem;
+    padding: 120px 4rem;
     background: var(--surface-ground);
 }
 

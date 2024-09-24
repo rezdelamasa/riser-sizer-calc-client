@@ -42,7 +42,7 @@ const router = createRouter({
       component: () => import('../views/ProjectView.vue')
     },
     {
-      path: '/projects/:id/risers/:riser_id',
+      path: '/projects/:project_id/risers/:riser_id',
       name: 'risers',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
@@ -50,7 +50,7 @@ const router = createRouter({
       component: () => import('../views/RiserView.vue')
     },
     {
-      path: '/projects/:id/risers/:riser_id/branches/:branch_id',
+      path: '/projects/:project_id/risers/:riser_id/branches/:branch_id',
       name: 'branch',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route

@@ -2,6 +2,9 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 
 export const useBranchesStore = defineStore('branches-store', () => {
+
+  const branch = ref({})
+
   const branches = ref([])
 
   const getBranches = async (riserId) => {
@@ -18,5 +21,19 @@ export const useBranchesStore = defineStore('branches-store', () => {
     }
   }
 
-  return { branches, getBranches }
+  const getBranch = async (branchId) => {
+    try {
+      await fetch(`http://localhost:3000/branches?id=${branchId}`)
+        .then((response) => 
+          response.json()
+        )
+        .then((data) => {
+            branch.value = data[0]
+        })
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  return { branches, getBranches, branch, getBranch }
 })

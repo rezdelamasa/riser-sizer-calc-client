@@ -3,6 +3,7 @@ import { ref, computed, onMounted } from 'vue'
 import { useProjectStore } from "@/stores/project"
 import { useRoute } from 'vue-router';
 import BackLink from '../components/BackLink.vue'
+import TitleHeader from '@/components/TitleHeader.vue';
 
 const projectStore = useProjectStore()
 
@@ -17,7 +18,8 @@ const project = computed(() => {
 });
 </script>
 <template>
-    <main>
+    <main v-if="project">
+        <TitleHeader></TitleHeader>
         <BackLink to="/projects" text="All Projects" />
         <h1>Risers</h1>
         <div class="content">
@@ -52,8 +54,9 @@ const project = computed(() => {
 
 <style scoped>
 main {
-    padding: 2rem 4rem;
+    padding: 120px 4rem;
     background: var(--surface-ground);
+    position: relative;
 }
 
 .content {
@@ -83,5 +86,18 @@ main {
     width: 2.5rem;
     display: flex;
     justify-content: center;
+}
+
+.title_header {
+    background: transparent;
+    border-bottom: 2px solid #d1d5dc;
+    width: 100%;
+    position: absolute;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    height: 96px;
+    padding: 0 4rem;
+    box-sizing: border-box;
 }
 </style>

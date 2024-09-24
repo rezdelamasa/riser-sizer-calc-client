@@ -3,6 +3,7 @@ import { defineStore } from 'pinia'
 
 export const useProjectStore = defineStore('project-store', () => {
   const project = ref(null)
+  const riserLabel = ref(null)
 
   const getProject = async (projectId) => {
     try {
@@ -25,14 +26,28 @@ export const useProjectStore = defineStore('project-store', () => {
           } catch (error) {
             console.error(error);
           }
-          // project.value = data
         })
     } catch (error) {
       console.error(error);
     }
   }
 
+  const getRiserLabel = async (riserId) => {
+    try {
+      await fetch(`http://localhost:3000/risers?id=${riserId}`)
+        .then((response) => 
+          response.json()
+        )
+        .then((data) => {
+          riserLabel.value = data[0].label
+        })
+      } catch (error) {
+        console.error(error);
+      }
+        // project.value = data
+    }
 
 
-  return { project, getProject }
+
+  return { project, riserLabel, getProject, getRiserLabel }
 })
