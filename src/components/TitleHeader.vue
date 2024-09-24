@@ -1,0 +1,58 @@
+<script setup lang="ts">
+import { useBranchesStore } from "@/stores/branches";
+import { useProjectStore } from "@/stores/project"
+import { storeToRefs } from "pinia";
+import { onMounted } from "vue";
+import { useRoute } from "vue-router";
+
+const { params } = useRoute()
+
+const { getProject, getRiserLabel} = useProjectStore()
+const { getBranch } = useBranchesStore()
+
+onMounted(async () => {
+    if(params.project_id) {
+        await getProject(params.project_id)
+    }
+    if(params.riser_id) {
+        await getRiserLabel(params.riser_id)
+    }
+    if(params.branch_id) {
+        await getBranch(params.branch_id)
+    }
+})
+
+const { project, riserLabel } = storeToRefs(useProjectStore())
+const { branch } = storeToRefs(useBranchesStore())
+
+
+
+</script>
+<template>
+    <header class="title_header flex align-items-center justify-content-start gap-8">
+        <div v-if="params.project_id && project" class="flex flex-column align-items-start justify-content-center">
+            <h3 class="text-gray-700 mt-0 mb-2">{{ project.name }}</h3>
+            <p class="my-0">{{ project.address }}</p>
+        </div>
+        <div v-if="params.riser_id && riserLabel" class="flex flex-column align-items-start justify-content-center">
+            <h3 class="text-gray-700 mt-0 mb-2">Riser Label</h3>
+            <p class="my-0">{{ riserLabel }}</p>
+        </div>
+        <div v-if="params.branch_id && branch" class="flex flex-column align-items-start justify-content-center">
+            <h3 class="text-gray-700 mt-0 mb-2">Branch Label</h3>
+            <p class="my-0">{{ branch.label }}</p>
+        </div>
+    </header>
+</template>
+
+<style>
+.back-link:hover {
+    background: none;
+    width: fit-content;
+}
+
+.back-link__button:hover {
+    background: none; 
+    color: #282e38;
+}
+</style>
