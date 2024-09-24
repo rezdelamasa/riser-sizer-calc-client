@@ -18,7 +18,7 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
     const initHotValue = ref(0)
 
     const calculatedFixtures = computed(() => {
-        let fixturesCopy = [...fixtures.value]
+        let fixturesCopy = fixtures.value
         for(let i = fixturesCopy.length - 1; i >= 0; i--) {
 
             fixturesCopy[i].totals = {
@@ -62,7 +62,7 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
               response.json()
             )
             .then((data) => {
-                fixtures.value = data
+                fixtures.value = [...data]
             })
         } catch (error) {
           console.error(error);
