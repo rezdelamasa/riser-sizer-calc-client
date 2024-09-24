@@ -346,16 +346,4 @@ main {
 .table:deep(td.cell--blue) {
     background: rgb(242, 247, 255);
 }
-
-.title_header {
-    background: transparent;
-    border-bottom: 2px solid #d1d5dc;
-    width: 100%;
-    z-index: 1000;
-    top: 0;
-    left: 0;
-    min-height: 96px;
-    height: 96px;
-    padding: 0 4rem;
-}
 </style>
