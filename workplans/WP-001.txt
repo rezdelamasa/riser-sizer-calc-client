@@ -1,0 +1,7 @@
+Branch: title-header
+
+What: Create a title header for pages that are children of a project.
+
+Why: To keep the user informed as to where they are located. It will contain information that acts as a reminder of what project they're working on, what riser they're on, what floor, and what branch. They will be able to quickly reference this information at a glance and cross-reference it with their drawings. 
+
+Where: The component will live in the components directory. The component will be used for every project child page (ex: project risers page, riser branches pages, and branch fixtures pages).
