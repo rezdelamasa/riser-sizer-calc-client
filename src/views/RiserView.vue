@@ -4,6 +4,8 @@ import { useBranchesStore } from "@/stores/branches"
 import { useRoute } from 'vue-router';
 import BackLink from '@/components/BackLink.vue';
 import TitleHeader from '@/components/TitleHeader.vue';
+import { useVuelidate } from '@vuelidate/core'
+import { helpers, required } from '@vuelidate/validators'
 
 const branchesStore = useBranchesStore()
 
@@ -16,6 +18,13 @@ const form = reactive({
     label: null,
     startingFloor: null,
 })
+
+const rules = {
+    label: { required: helpers.withMessage('Branch Label is required.', required)},
+    startingFloor: { required: helpers.withMessage('Starting Floor is required.', required)},
+}
+
+const v$ = useVuelidate(rules, form)
 
 onMounted(async () => {
     await branchesStore.getBranches(params.riser_id)
