@@ -110,6 +110,8 @@ const hotValueHeader = computed(() => {
                             </div>
                         </div>
                     </template>
+                <template #empty> No fixtures found.</template>
+                <template #loading> Loading customers data. Please wait. </template>
                     <Column field="name" header="Name">
                         <template #body="slotProps">
                             <div class="column-wrapper">
