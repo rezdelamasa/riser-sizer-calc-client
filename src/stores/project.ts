@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { v4 as uuidv4 } from "uuid";
 
 export const useProjectStore = defineStore('project-store', () => {
   const project = ref(null)
@@ -43,11 +44,41 @@ export const useProjectStore = defineStore('project-store', () => {
         })
       } catch (error) {
         console.error(error);
+    }
+  }
+
+  const postRiser = async (riserObj) => {
+    const { label, sourceFloor, projectId } = riserObj; 
+
+    const body = {
+      id: uuidv4(),
+      projectId,
+      sourceFloor,
+      label,
+      totalSizes: {
+        cold: "",
+        hot: "",
       }
-        // project.value = data
     }
 
+    try {
+      await fetch(`http://localhost:3000/risers`, 
+      {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        project.value.risers.push(data);
+      })
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
-
-  return { project, riserLabel, getProject, getRiserLabel }
+  return { project, riserLabel, getProject, getRiserLabel, postRiser }
 })

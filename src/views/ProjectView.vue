@@ -1,13 +1,30 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, reactive } from 'vue'
 import { useProjectStore } from "@/stores/project"
 import { useRoute } from 'vue-router';
 import BackLink from '../components/BackLink.vue'
 import TitleHeader from '@/components/TitleHeader.vue';
+import { useVuelidate } from '@vuelidate/core'
+import { helpers, required } from '@vuelidate/validators'
 
 const projectStore = useProjectStore()
 
 const { params } = useRoute()
+
+const createDialogVisible = ref(false)
+
+const form = reactive({
+    sourceFloor: null,
+    riserLabel: null,
+    notes: null
+})
+
+const rules = {
+    sourceFloor: { required: helpers.withMessage('Source Floor is required.', required)},
+    riserLabel: { required: helpers.withMessage('Riser Label is required.', required)}
+}
+
+const v$ = useVuelidate(rules, form)
 
 onMounted(async () => {
     await projectStore.getProject(params.project_id)
@@ -16,6 +33,28 @@ onMounted(async () => {
 const project = computed(() => {
   return projectStore.project
 });
+
+const toggleCreateDialog = () => {
+    createDialogVisible.value = !createDialogVisible.value
+}
+
+const createRiser = async () => {
+    const result = await v$.value.$validate()
+    if (!result) {
+        return
+    }
+
+    const riserObj = {
+        label: form.riserLabel,
+        sourceFloor: form.sourceFloor,
+        notes: form.notes,
+        projectId: params.project_id
+    }
+
+    const newRiser = await projectStore.postRiser(riserObj)
+    return toggleCreateDialog()
+}
+
 </script>
 <template>
     <main v-if="project">
@@ -24,7 +63,7 @@ const project = computed(() => {
             <BackLink to="/projects" text="All Projects" />
             <h1>Risers</h1>
             <div class="content">
-                <Button class="create-button" icon="pi pi-plus" label="Create Riser"></Button>
+                <Button @click="toggleCreateDialog" class="create-button" icon="pi pi-plus" label="Create Riser"></Button>
                 <Card class="card">
                     <template v-if="project" #content>
                         <DataTable :value="project.risers">
@@ -51,6 +90,26 @@ const project = computed(() => {
                 </Card>
             </div>
         </div>
+        <Dialog v-model:visible="createDialogVisible" modal header="Create Riser" :draggable="false" style="width: 80vw; max-width: 720px;">
+            <div class="flex flex-column align-items-fill gap-3 mb-4">
+                <label for="riser_label" class="font-semibold w-100">Riser Label</label>
+                <InputText v-model="form.riserLabel" id="riser_label" class="flex-auto" autocomplete="off" required />
+                <span v-if="v$.riserLabel.$error" class="text-red-500">{{ v$.riserLabel.required.$message }}</span>
+            </div>
+            <div class="flex flex-column align-items-fill gap-3 mb-4">
+                <label for="source_floor" class="font-semibold">Source Floor</label>
+                <InputText v-model="form.sourceFloor" id="source_floor" class="flex-auto" autocomplete="off" required />
+                <span v-if="v$.sourceFloor.$error" class="text-red-500">{{ v$.sourceFloor.required.$message }}</span>
+            </div>
+            <div class="flex flex-column align-items-fill gap-3 mb-4">
+                <label for="notes" class="font-semibold">Notes (Optional)</label>
+                <Textarea v-model="form.notes" id="notes" rows="8" cols="30" />
+            </div>
+            <div class="flex justify-content-end gap-2">
+                <Button type="button" label="Cancel" severity="secondary" @click="toggleCreateDialog"></Button>
+                <Button type="button" label="Save" @click="createRiser"></Button>
+            </div>
+        </Dialog>
     </main>
 </template>
 
