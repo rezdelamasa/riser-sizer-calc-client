@@ -6,13 +6,29 @@ import { helpers, required } from '@vuelidate/validators'
 
 const projectsStore = useProjectsStore()
 
-onMounted(async () => {
-    await projectsStore.getProjects()
-})
+const createDialogVisible = ref(false)
 
 const projects = computed(() => {
   return projectsStore.projects
 });
+
+const form = reactive({
+    name: null,
+    address: null,
+    type: null,
+    floors: null,
+    risers: null,
+})
+
+const rules = {
+    name: { required: helpers.withMessage('Project Name is required.', required)},
+    address: { required: helpers.withMessage('Address is required.', required)},
+    type: { required: helpers.withMessage('Type is required.', required)},
+    floors: { required: helpers.withMessage('Number of floors is required.', required)},
+    risers: { required: helpers.withMessage('Number of risers is required.', required)}
+}
+
+const v$ = useVuelidate(rules, form)
 </script>
 <template>
     <main>
