@@ -64,82 +64,80 @@ const hotValueHeader = computed(() => {
         <TitleHeader></TitleHeader>
         <div class="wrapper">
             <BackLink :back-link="backLink" text="All Branches"/>
-            <template v-if="calculatedFixtures.length && firstFixture.length">
-                <DataTable 
-                    ref="fixturesTable"
-                    :value="calculatedFixtures" 
-                    tableStyle="min-width: 50rem"
-                    class="table"
-                    :rowClass="(data) => rowClass(data)"
-                >
-                    <template #header>
-                        <div class="header-wrapper">
-                            <div class="header__text">
+            <DataTable 
+                ref="fixturesTable"
+                :value="calculatedFixtures" 
+                tableStyle="min-width: 50rem"
+                class="table"
+                :rowClass="(data) => rowClass(data)"
+            >
+                <template #header>
+                    <div class="header-wrapper">
+                        <div class="header__text">
                             <p class="header__values"><span class="header__values__title">Cold:</span>{{ coldValueHeader }}</p>
                             <p class="header__values"><span class="header__values__title">Hot:</span>{{ hotValueHeader }}</p> 
-                            </div>
-                            <div class="header__actions">
-                                <p>Init. Values</p>
-                                <InputGroup class="input-group">
-                                    <InputGroupAddon>
-                                        Hot
-                                    </InputGroupAddon>
-                                    <InputNumber 
-                                        id="init-value-input--hot"
-                                        v-model="initHotValue" 
-                                    @update:model-value="updateLoads(initColdValue, initHotValue)"
-                                        :min-fraction-digits="1" 
-                                        :max-fraction-digits="1"
-                                        placeholder="Initial Hot FUs"
-                                    ></InputNumber>
-                                </InputGroup>
-                                <InputGroup class="input-group">
-                                    <InputGroupAddon>
-                                        Cold
-                                    </InputGroupAddon>
-                                    <InputNumber 
-                                        id="init-value-input--cold"
-                                        v-model="initColdValue" 
-                                    @update:model-value="updateLoads(initColdValue, initHotValue)"
-                                        :min-fraction-digits="1" 
-                                        :max-fraction-digits="1"
-                                        placeholder="Initial Cold FUs"
-                                    ></InputNumber>
-                                </InputGroup>
-                            <Button @click="handleAddFixturesClick" class="header__button">Add Fixture</Button>
-                            </div>
                         </div>
-                    </template>
+                        <div class="header__actions">
+                            <p>Init. Values</p>
+                            <InputGroup class="input-group">
+                                <InputGroupAddon>
+                                    Hot
+                                </InputGroupAddon>
+                                <InputNumber 
+                                    id="init-value-input--hot"
+                                    v-model="initHotValue" 
+                                    @update:model-value="updateLoads(initColdValue, initHotValue)"
+                                    :min-fraction-digits="1" 
+                                    :max-fraction-digits="1"
+                                    placeholder="Initial Hot FUs"
+                                ></InputNumber>
+                            </InputGroup>
+                            <InputGroup class="input-group">
+                                <InputGroupAddon>
+                                    Cold
+                                </InputGroupAddon>
+                                <InputNumber 
+                                    id="init-value-input--cold"
+                                    v-model="initColdValue" 
+                                    @update:model-value="updateLoads(initColdValue, initHotValue)"
+                                    :min-fraction-digits="1" 
+                                    :max-fraction-digits="1"
+                                    placeholder="Initial Cold FUs"
+                                ></InputNumber>
+                            </InputGroup>
+                        <Button @click="handleAddFixturesClick" class="header__button">Add Fixture</Button>
+                        </div>
+                    </div>
+                </template>
                 <template #empty> No fixtures found.</template>
                 <template #loading> Loading customers data. Please wait. </template>
-                    <Column field="name" header="Name">
-                        <template #body="slotProps">
-                            <div class="column-wrapper">
-                                <p>{{ slotProps.data.name }}</p>
-                            </div>
-                        </template>
-                    </Column>
-                    <Column field="type" header="Type">
-                        <template #body="slotProps">
-                            <div class="column-wrapper">
-                                <p v-if="slotProps.data.occupancy" class="fixture__text">{{ slotProps.data.occupancy }} - {{ slotProps.data.fixtureType }}</p>
-                            </div>
-                        </template>
-                    </Column>
-                    <Column field="totals.loadValues.cold" header="Cold Demand (FU)" class="cell--blue"></Column>
-                    <Column field="totals.sizes.cold" header="Cold Size" class="cell--blue"></Column>
-                    <Column field="totals.loadValues.hot" header="Hot Demand (FU)" class="cell--red">
-                        <template #body="slotProps">
-                            <p>{{ slotProps.data.loadValues.hot === 0 ? '-' : slotProps.data.totals.loadValues.hot}}</p>
-                        </template>
-                    </Column>
-                    <Column field="totals.sizes.hot" header="Hot Size" class="cell--red">
-                        <template #body="slotProps">
-                            <p>{{ slotProps.data.loadValues.hot === 0 ? '-' : slotProps.data.totals.sizes.hot }}</p>
-                        </template>
-                    </Column>
-                </DataTable>
-            </template>
+                <Column field="name" header="Name">
+                    <template #body="slotProps">
+                        <div class="column-wrapper">
+                            <p>{{ slotProps.data.name }}</p>
+                        </div>
+                    </template>
+                </Column>
+                <Column field="type" header="Type">
+                    <template #body="slotProps">
+                        <div class="column-wrapper">
+                            <p v-if="slotProps.data.occupancy" class="fixture__text">{{ slotProps.data.occupancy }} - {{ slotProps.data.fixtureType }}</p>
+                        </div>
+                    </template>
+                </Column>
+                <Column field="totals.loadValues.cold" header="Cold Demand (FU)" class="cell--blue"></Column>
+                <Column field="totals.sizes.cold" header="Cold Size" class="cell--blue"></Column>
+                <Column field="totals.loadValues.hot" header="Hot Demand (FU)" class="cell--red">
+                    <template #body="slotProps">
+                        <p>{{ slotProps.data.loadValues.hot === 0 ? '-' : slotProps.data.totals.loadValues.hot}}</p>
+                    </template>
+                </Column>
+                <Column field="totals.sizes.hot" header="Hot Size" class="cell--red">
+                    <template #body="slotProps">
+                        <p>{{ slotProps.data.loadValues.hot === 0 ? '-' : slotProps.data.totals.sizes.hot }}</p>
+                    </template>
+                </Column>
+            </DataTable>
         </div>
     </div>
     <FixtureSidebar></FixtureSidebar>
