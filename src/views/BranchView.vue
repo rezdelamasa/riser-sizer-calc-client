@@ -352,6 +352,7 @@ main {
 
 .header__values__title {
     font-weight: bold;
+    margin-right: .5rem;
 }
 
 .table:deep(td.cell--red) {
