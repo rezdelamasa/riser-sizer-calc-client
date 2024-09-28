@@ -20,6 +20,24 @@ const project = computed(() => {
 const toggleCreateDialog = () => {
     createDialogVisible.value = !createDialogVisible.value
 }
+
+const createRiser = async () => {
+    const result = await v$.value.$validate()
+    if (!result) {
+        return
+    }
+
+    const riserObj = {
+        label: form.riserLabel,
+        sourceFloor: form.sourceFloor,
+        notes: form.notes,
+        projectId: params.project_id
+    }
+
+    const newRiser = await projectStore.postRiser(riserObj)
+    return toggleCreateDialog()
+}
+
 </script>
 <template>
     <main v-if="project">
