@@ -24,7 +24,7 @@ const project = computed(() => {
             <BackLink to="/projects" text="All Projects" />
             <h1>Risers</h1>
             <div class="content">
-                <Button class="create-button" icon="pi pi-plus" label="Create Riser"></Button>
+                <Button @click="toggleCreateDialog" class="create-button" icon="pi pi-plus" label="Create Riser"></Button>
                 <Card class="card">
                     <template v-if="project" #content>
                         <DataTable :value="project.risers">
