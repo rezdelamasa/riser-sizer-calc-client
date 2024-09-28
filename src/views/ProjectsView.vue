@@ -42,7 +42,7 @@ const toggleCreateDialog = () => {
     <main>
         <h1>Projects</h1>
         <div class="content">
-            <Button class="create-button" icon="pi pi-plus" label="Create Project"></Button>
+            <Button @click="toggleCreateDialog" class="create-button" icon="pi pi-plus" label="Create Project"></Button>
             <Card class="card">
                 <template #content>
                     <DataTable :value="projects">
