@@ -48,6 +48,7 @@ const createBranch = async () => {
     const branchObj = {
         label: form.label,
         startingFloor: form.startingFloor,
+        riserId: params.riser_id
     }
 
     await branchesStore.postBranch(branchObj)
