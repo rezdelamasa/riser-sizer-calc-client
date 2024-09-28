@@ -34,7 +34,7 @@ const { fixtures, calculatedFixtures, initColdValue, initHotValue } = storeToRef
 const { updateLoads } = useBranchFixturesStore()
 
 const firstFixture = computed(() => {
-    return fixtures.value.slice(0, 1)
+    return fixtures.value[0]
 })
 
 const rowClass = (data) => {
