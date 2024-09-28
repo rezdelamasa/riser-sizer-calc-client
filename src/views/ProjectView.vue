@@ -55,6 +55,26 @@ const toggleCreateDialog = () => {
                 </Card>
             </div>
         </div>
+        <Dialog v-model:visible="createDialogVisible" modal header="Create Riser" :draggable="false" style="width: 80vw; max-width: 720px;">
+            <div class="flex flex-column align-items-fill gap-3 mb-4">
+                <label for="riser_label" class="font-semibold w-100">Riser Label</label>
+                <InputText v-model="form.riserLabel" id="riser_label" class="flex-auto" autocomplete="off" required />
+                <span v-if="v$.riserLabel.$error" class="text-red-500">{{ v$.riserLabel.required.$message }}</span>
+            </div>
+            <div class="flex flex-column align-items-fill gap-3 mb-4">
+                <label for="source_floor" class="font-semibold">Source Floor</label>
+                <InputText v-model="form.sourceFloor" id="source_floor" class="flex-auto" autocomplete="off" required />
+                <span v-if="v$.sourceFloor.$error" class="text-red-500">{{ v$.sourceFloor.required.$message }}</span>
+            </div>
+            <div class="flex flex-column align-items-fill gap-3 mb-4">
+                <label for="notes" class="font-semibold">Notes (Optional)</label>
+                <Textarea v-model="form.notes" id="notes" rows="8" cols="30" />
+            </div>
+            <div class="flex justify-content-end gap-2">
+                <Button type="button" label="Cancel" severity="secondary" @click="toggleCreateDialog"></Button>
+                <Button type="button" label="Save" @click="createRiser"></Button>
+            </div>
+        </Dialog>
     </main>
 </template>
 
