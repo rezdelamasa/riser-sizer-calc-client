@@ -1,14 +1,30 @@
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, reactive } from 'vue'
 import { useBranchesStore } from "@/stores/branches"
 import { useRoute } from 'vue-router';
 import BackLink from '@/components/BackLink.vue';
 import TitleHeader from '@/components/TitleHeader.vue';
+import { useVuelidate } from '@vuelidate/core'
+import { helpers, required } from '@vuelidate/validators'
 
 const branchesStore = useBranchesStore()
 
+const createDialogVisible = ref(false)
+
 const backLink = ref("")
 const { params, path } = useRoute()
+
+const form = reactive({
+    label: null,
+    startingFloor: null,
+})
+
+const rules = {
+    label: { required: helpers.withMessage('Branch Label is required.', required)},
+    startingFloor: { required: helpers.withMessage('Starting Floor is required.', required)},
+}
+
+const v$ = useVuelidate(rules, form)
 
 onMounted(async () => {
     await branchesStore.getBranches(params.riser_id)
@@ -18,6 +34,27 @@ onMounted(async () => {
 const branches = computed(() => {
   return branchesStore.branches
 });
+
+const toggleCreateDialog = () => {
+    createDialogVisible.value = !createDialogVisible.value
+}
+
+const createBranch = async () => {
+    const result = await v$.value.$validate()
+    if (!result) {
+        return
+    }
+
+    const branchObj = {
+        label: form.label,
+        startingFloor: form.startingFloor,
+        riserId: params.riser_id
+    }
+
+    await branchesStore.postBranch(branchObj)
+    return toggleCreateDialog()
+}
+
 </script>
 <template>
     <main>
@@ -26,7 +63,7 @@ const branches = computed(() => {
             <BackLink :back-link="backLink" text="All Risers"/>
             <h1>Branches</h1>
             <div class="content">
-                <Button class="create-button" icon="pi pi-plus" label="Create Branch"></Button>
+                <Button @click="toggleCreateDialog" class="create-button" icon="pi pi-plus" label="Create Branch"></Button>
                 <Card class="card">
                     <template v-if="branches" #content>
                         <DataTable :value="branches">
@@ -54,6 +91,22 @@ const branches = computed(() => {
                 </Card>
             </div>
         </div>
+        <Dialog v-model:visible="createDialogVisible" modal header="Create Riser" :draggable="false" style="width: 80vw; max-width: 720px;">
+            <div class="flex flex-column align-items-fill gap-3 mb-4">
+                <label for="label" class="font-semibold w-100">Branch Label</label>
+                <InputText v-model="form.label" id="label" class="flex-auto" autocomplete="off" required />
+                <span v-if="v$.label.$error" class="text-red-500">{{ v$.label.required.$message }}</span>
+            </div>
+            <div class="flex flex-column align-items-fill gap-3 mb-4">
+                <label for="startingFloor" class="font-semibold">Starting Floor</label>
+                <InputNumber v-model="form.startingFloor" id="startingFloor" class="flex-auto" autocomplete="off" required />
+                <span v-if="v$.startingFloor.$error" class="text-red-500">{{ v$.startingFloor.required.$message }}</span>
+            </div>
+            <div class="flex justify-content-end gap-2">
+                <Button type="button" label="Cancel" severity="secondary" @click="toggleCreateDialog"></Button>
+                <Button type="button" label="Save" @click="createBranch"></Button>
+            </div>
+        </Dialog>
     </main>
 </template>
 

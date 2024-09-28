@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+import { v4 as uuidv4 } from "uuid";
 
 export const useBranchesStore = defineStore('branches-store', () => {
 
@@ -35,5 +36,34 @@ export const useBranchesStore = defineStore('branches-store', () => {
     }
   }
 
-  return { branches, getBranches, branch, getBranch }
+  const postBranch = async (branchObj) => {
+    const { label, startingFloor, riserId } = branchObj; 
+
+    const body = {
+      id: uuidv4(),
+      riserId,
+      label,
+      startingFloor,
+    }
+
+    try {
+      await fetch(`http://localhost:3000/risers`, 
+      {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        branches.value.push(data);
+      })
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  return { branches, getBranches, branch, getBranch, postBranch }
 })
