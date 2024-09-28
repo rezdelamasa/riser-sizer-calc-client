@@ -39,6 +39,21 @@ const toggleCreateDialog = () => {
     createDialogVisible.value = !createDialogVisible.value
 }
 
+const createBranch = async () => {
+    const result = await v$.value.$validate()
+    if (!result) {
+        return
+    }
+
+    const projectObj = {
+        label: form.label,
+        startingFloor: form.startingFloor,
+    }
+
+    await branchesStore.postBranch(projectObj)
+    return toggleCreateDialog()
+}
+
 </script>
 <template>
     <main>
