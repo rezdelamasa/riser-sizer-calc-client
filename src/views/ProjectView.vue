@@ -11,6 +11,11 @@ const { params } = useRoute()
 
 const createDialogVisible = ref(false)
 
+const form = reactive({
+    sourceFloor: null,
+    riserLabel: null,
+    notes: null
+})
 
 onMounted(async () => {
     await projectStore.getProject(params.project_id)
