@@ -45,6 +45,17 @@ const handleAddFixturesClick = () => {
     toggle()
 }
 
+const coldValueHeader = computed(() => {
+    if(!firstFixture.value) return ""
+    return firstFixture.value.totals.loadValues.cold + "/" + firstFixture.value.totals.sizes.cold
+})
+
+const hotValueHeader = computed(() => {
+    if(!firstFixture.value) return ""
+    return firstFixture.value.totals.loadValues.hot + " / " + firstFixture.value.totals.sizes.hot
+})
+
+
 </script>
 
 <template>
