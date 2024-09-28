@@ -31,6 +31,14 @@
       "type": "Commercial",
       "floors": 50,
       "risers": 9
+    },
+    {
+      "id": "45c2693e-6014-4884-8bc5-76b9fdefa5f0",
+      "name": "test",
+      "address": "test",
+      "type": "test",
+      "floors": 1,
+      "risers": 1
     }
   ],
   "risers": [
@@ -93,6 +101,16 @@
         "cold": "1 1/2\"",
         "hot": "1\""
       }
+    },
+    {
+      "id": "0b0e02c5-924b-4be9-95a7-77f6399c5bba",
+      "projectId": "45c2693e-6014-4884-8bc5-76b9fdefa5f0",
+      "sourceFloor": "test",
+      "label": "test",
+      "totalSizes": {
+        "cold": "",
+        "hot": ""
+      }
     }
   ],
   "branches": [
@@ -131,6 +149,12 @@
       "riserId": "riser-1234",
       "label": "6",
       "startingFloor": "3"
+    },
+    {
+      "id": "2ac11b29-583f-4cf4-8652-960db4cae865",
+      "riserId": "0b0e02c5-924b-4be9-95a7-77f6399c5bba",
+      "label": "test",
+      "startingFloor": 1
     }
   ],
   "fixtures": [
@@ -425,6 +449,71 @@
       "shorthand": {
         "occupancy": "Pr.",
         "fixtureType": "FT"
+      }
+    },
+    {
+      "id": "d9622ac0-7d5b-11ef-ab25-bda40ac10e06",
+      "branchId": "2ac11b29-583f-4cf4-8652-960db4cae865",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flush Tank",
+      "loadValues": {
+        "cold": 2.7,
+        "hot": 1.5,
+        "total": 3.6
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FT"
+      }
+    },
+    {
+      "id": "d9f17270-7d5b-11ef-ab25-bda40ac10e06",
+      "branchId": "2ac11b29-583f-4cf4-8652-960db4cae865",
+      "name": "Bathroom Group",
+      "occupancy": "Private",
+      "fixtureType": "Flushometer Valve",
+      "loadValues": {
+        "cold": 6,
+        "hot": 3,
+        "total": 8
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "FV"
+      }
+    },
+    {
+      "id": "da6b0f40-7d5b-11ef-ab25-bda40ac10e06",
+      "branchId": "2ac11b29-583f-4cf4-8652-960db4cae865",
+      "name": "Bathtub",
+      "occupancy": "Private",
+      "fixtureType": "Faucet",
+      "slug": "bathtub-private-faucet",
+      "loadValues": {
+        "cold": 1,
+        "hot": 1,
+        "total": 1.4
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "Fa."
+      }
+    },
+    {
+      "id": "dbc98dd0-7d5b-11ef-ab25-bda40ac10e06",
+      "branchId": "2ac11b29-583f-4cf4-8652-960db4cae865",
+      "name": "Bidet",
+      "occupancy": "Private",
+      "fixtureType": "Faucet",
+      "loadValues": {
+        "cold": 1.5,
+        "hot": 1.5,
+        "total": 2
+      },
+      "shorthand": {
+        "occupancy": "Pr.",
+        "fixtureType": "Fa."
       }
     }
   ]

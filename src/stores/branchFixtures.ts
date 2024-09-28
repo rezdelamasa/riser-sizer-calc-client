@@ -18,6 +18,7 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
     const initHotValue = ref(0)
 
     const calculatedFixtures = computed(() => {
+        if(!fixtures.value.length) return fixtures.value
         let fixturesCopy = fixtures.value
         for(let i = fixturesCopy.length - 1; i >= 0; i--) {
 
@@ -129,5 +130,10 @@ export const useBranchFixturesStore = defineStore('branch-fixtures', () => {
         return favorites.value.some(fav => fav.name === fixture.name && fav.occupancy === fixture.occupancy && fav.fixtureType === fixture.fixtureType)
     }
 
-    return { fixtures, calculatedFixtures, initColdValue, initHotValue, addFixture, recents, addToFavorites, favorites, isFavorited, getFixtures }
+    const updateLoads = (cold, hot) => {
+        initColdValue.value = cold
+        initHotValue.value = hot
+    }
+
+    return { fixtures, calculatedFixtures, initColdValue, initHotValue, addFixture, recents, addToFavorites, favorites, isFavorited, getFixtures, updateLoads }
 })
