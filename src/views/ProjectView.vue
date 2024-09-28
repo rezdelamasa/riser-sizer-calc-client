@@ -9,6 +9,9 @@ const projectStore = useProjectStore()
 
 const { params } = useRoute()
 
+const createDialogVisible = ref(false)
+
+
 onMounted(async () => {
     await projectStore.getProject(params.project_id)
 })
