@@ -17,6 +17,13 @@ const form = reactive({
     notes: null
 })
 
+const rules = {
+    sourceFloor: { required: helpers.withMessage('Source Floor is required.', required)},
+    riserLabel: { required: helpers.withMessage('Riser Label is required.', required)}
+}
+
+const v$ = useVuelidate(rules, form)
+
 onMounted(async () => {
     await projectStore.getProject(params.project_id)
 })
