@@ -29,6 +29,14 @@ const rules = {
 }
 
 const v$ = useVuelidate(rules, form)
+
+onMounted(async () => {
+    await projectsStore.getProjects()
+})
+
+const toggleCreateDialog = () => {
+    createDialogVisible.value = !createDialogVisible.value
+}
 </script>
 <template>
     <main>
