@@ -44,7 +44,7 @@ export const useProjectStore = defineStore('project-store', () => {
         })
       } catch (error) {
         console.error(error);
-      }
+    }
   }
 
   const postRiser = async (riserObj) => {
