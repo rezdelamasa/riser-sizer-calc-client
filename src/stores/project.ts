@@ -80,5 +80,5 @@ export const useProjectStore = defineStore('project-store', () => {
     }
   }
 
-  return { project, riserLabel, getProject, getRiserLabel }
+  return { project, riserLabel, getProject, getRiserLabel, postRiser }
 })
