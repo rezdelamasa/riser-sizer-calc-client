@@ -104,7 +104,7 @@ const createBranch = async () => {
             </div>
             <div class="flex justify-content-end gap-2">
                 <Button type="button" label="Cancel" severity="secondary" @click="toggleCreateDialog"></Button>
-                <Button type="button" label="Save" @click="createProject"></Button>
+                <Button type="button" label="Save" @click="createBranch"></Button>
             </div>
         </Dialog>
     </main>
