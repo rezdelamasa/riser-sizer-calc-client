@@ -45,10 +45,40 @@ export const useProjectStore = defineStore('project-store', () => {
       } catch (error) {
         console.error(error);
       }
-        // project.value = data
+  }
+
+  const postRiser = async (riserObj) => {
+    const { label, sourceFloor, projectId } = riserObj; 
+
+    const body = {
+      id: uuidv4(),
+      projectId,
+      sourceFloor,
+      label,
+      totalSizes: {
+        cold: "",
+        hot: "",
+      }
     }
 
-
+    try {
+      await fetch(`http://localhost:3000/risers`, 
+      {
+        method: "POST",
+        headers: {
+          'Accept': 'application/json, text/plain, */*',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(body)
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        project.value.risers.push(data);
+      })
+    } catch (error) {
+      console.error(error);
+    }
+  }
 
   return { project, riserLabel, getProject, getRiserLabel }
 })
