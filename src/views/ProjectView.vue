@@ -16,6 +16,10 @@ onMounted(async () => {
 const project = computed(() => {
   return projectStore.project
 });
+
+const toggleCreateDialog = () => {
+    createDialogVisible.value = !createDialogVisible.value
+}
 </script>
 <template>
     <main v-if="project">
