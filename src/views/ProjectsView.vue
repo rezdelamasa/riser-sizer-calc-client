@@ -37,6 +37,25 @@ onMounted(async () => {
 const toggleCreateDialog = () => {
     createDialogVisible.value = !createDialogVisible.value
 }
+
+const createProject = async () => {
+    const result = await v$.value.$validate()
+    if (!result) {
+        return
+    }
+
+    const projectObj = {
+        name: form.name,
+        address: form.address,
+        type: form.type,
+        floors: form.floors,
+        risers: form.risers,
+    }
+
+    await projectsStore.postProject(projectObj)
+    return toggleCreateDialog()
+}
+
 </script>
 <template>
     <main>
