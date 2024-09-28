@@ -87,7 +87,7 @@ const hotValueHeader = computed(() => {
                                     <InputNumber 
                                         id="init-value-input--hot"
                                         v-model="initHotValue" 
-                                        @update:model-value="branchFixturesStore.updateLoads(initColdValue, initHotValue)"
+                                    @update:model-value="updateLoads(initColdValue, initHotValue)"
                                         :min-fraction-digits="1" 
                                         :max-fraction-digits="1"
                                         placeholder="Initial Hot FUs"
@@ -100,7 +100,7 @@ const hotValueHeader = computed(() => {
                                     <InputNumber 
                                         id="init-value-input--cold"
                                         v-model="initColdValue" 
-                                        @update:model-value="branchFixturesStore.updateLoads(initColdValue, initHotValue)"
+                                    @update:model-value="updateLoads(initColdValue, initHotValue)"
                                         :min-fraction-digits="1" 
                                         :max-fraction-digits="1"
                                         placeholder="Initial Cold FUs"
