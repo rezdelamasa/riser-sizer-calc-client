@@ -75,8 +75,8 @@ const hotValueHeader = computed(() => {
                     <template #header>
                         <div class="header-wrapper">
                             <div class="header__text">
-                                <p class="header__values"><span class="header__values__title">Cold:</span> {{ firstFixture[0].totals.loadValues.cold }} / {{ firstFixture[0].totals.sizes.cold }}</p>
-                                <p class="header__values"><span class="header__values__title">Hot:</span> {{ firstFixture[0].totals.loadValues.hot }} / {{ firstFixture[0].totals.sizes.hot }}</p> 
+                            <p class="header__values"><span class="header__values__title">Cold:</span>{{ coldValueHeader }}</p>
+                            <p class="header__values"><span class="header__values__title">Hot:</span>{{ hotValueHeader }}</p> 
                             </div>
                             <div class="header__actions">
                                 <p>Init. Values</p>
