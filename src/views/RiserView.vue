@@ -45,12 +45,12 @@ const createBranch = async () => {
         return
     }
 
-    const projectObj = {
+    const branchObj = {
         label: form.label,
         startingFloor: form.startingFloor,
     }
 
-    await branchesStore.postBranch(projectObj)
+    await branchesStore.postBranch(branchObj)
     return toggleCreateDialog()
 }
 
