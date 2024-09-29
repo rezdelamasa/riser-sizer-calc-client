@@ -46,7 +46,7 @@ const { branch } = storeToRefs(useBranchesStore())
         </div>
         <div v-if="params.branch_id && branch" class="flex flex-column align-items-start justify-content-center">
             <h3 class="text-gray-700 mt-0 mb-2">Branch Label</h3>
-            <p class="my-0">{{ branch.label }}</p>
+            <p class="my-0">{{ branchLabel }}</p>
         </div>
     </header>
 </template>
