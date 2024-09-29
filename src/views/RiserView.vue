@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, reactive } from 'vue'
 import { useBranchesStore } from "@/stores/branches"
+import { useProjectStore } from "@/stores/project"
 import { useRoute } from 'vue-router';
 import BackLink from '@/components/BackLink.vue';
 import TitleHeader from '@/components/TitleHeader.vue';
@@ -8,6 +9,7 @@ import { useVuelidate } from '@vuelidate/core'
 import { helpers, required } from '@vuelidate/validators'
 
 const branchesStore = useBranchesStore()
+const projectStore = useProjectStore()
 
 const createDialogVisible = ref(false)
 
@@ -27,6 +29,7 @@ const rules = {
 const v$ = useVuelidate(rules, form)
 
 onMounted(async () => {
+    await projectStore.getRiser(params.riser_id)
     await branchesStore.getBranches(params.riser_id)
     backLink.value = "/projects/" + params.project_id
 })
