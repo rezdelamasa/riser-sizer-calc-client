@@ -28,10 +28,8 @@ onMounted(async () => {
     }
 })
 
-const { project, riserLabel } = storeToRefs(useProjectStore())
 const { branch } = storeToRefs(useBranchesStore())
-
-
+const { project, riser } = storeToRefs(useProjectStore())
 
 </script>
 <template>
