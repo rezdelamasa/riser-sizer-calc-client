@@ -10,7 +10,7 @@ export const useBranchesStore = defineStore('branches-store', () => {
 
   const getBranches = async (riserId) => {
     try {
-      await fetch(`http://localhost:3000/branches?riserId=${riserId}`)
+      await fetch(`http://localhost:8080/branches?riserId=${riserId}`)
         .then((response) => 
           response.json()
         )
