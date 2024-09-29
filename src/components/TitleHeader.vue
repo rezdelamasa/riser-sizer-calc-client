@@ -10,6 +10,9 @@ const { params } = useRoute()
 const { getProject, getRiserLabel} = useProjectStore()
 const { getBranch } = useBranchesStore()
 
+const riserLabel = ref("")
+const branchLabel = ref("")
+
 onMounted(async () => {
     if(params.project_id) {
         await getProject(params.project_id)
