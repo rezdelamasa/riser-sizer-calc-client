@@ -47,7 +47,7 @@ export const useProjectStore = defineStore('project-store', () => {
     }
 
     try {
-      await fetch(`http://localhost:3000/risers`, 
+      await fetch(`http://localhost:8080/risers`, 
       {
         method: "POST",
         headers: {
