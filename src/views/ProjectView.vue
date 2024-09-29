@@ -55,6 +55,10 @@ const createRiser = async () => {
     return toggleCreateDialog()
 }
 
+const deleteRiser = async (riserId) => {
+    await projectStore.deleteRiser(riserId);
+}
+
 </script>
 <template>
     <main v-if="project">
@@ -66,7 +70,9 @@ const createRiser = async () => {
                 <Button @click="toggleCreateDialog" class="create-button" icon="pi pi-plus" label="Create Riser"></Button>
                 <Card class="card">
                     <template v-if="project" #content>
-                        <DataTable :value="project.risers">
+                        <DataTable :value="project.projectRisers">
+                            <template #empty> No fixtures found.</template>
+                            <template #loading> Loading customers data. Please wait. </template>
                             <Column field="label" header="Riser">
                                 <template #body="slotProps">
                                     <router-link :to="'/projects/' + params.project_id + '/risers/' + slotProps.data.id">{{ slotProps.data.label }}</router-link>
@@ -78,7 +84,7 @@ const createRiser = async () => {
                             <Column>
                                 <template #body="slotProps">
                                     <div class="actions">
-                                        <Button class="actions__button" icon="pi pi-trash" severity="danger"></Button>
+                                        <Button @click="deleteRiser(slotProps.data.id)" class="actions__button" icon="pi pi-trash" severity="danger"></Button>
                                         <Button class="actions__button">
                                             <router-link :to="'/projects/' + slotProps.data.id"><i class="pi pi-external-link" style="color: white;"></i></router-link>
                                         </Button>
