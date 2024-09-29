@@ -40,7 +40,7 @@ const { branch } = storeToRefs(useBranchesStore())
             <h3 class="text-gray-700 mt-0 mb-2">{{ project.name }}</h3>
             <p class="my-0">{{ project.address }}</p>
         </div>
-        <div v-if="params.riser_id && riserLabel" class="flex flex-column align-items-start justify-content-center">
+        <div v-if="params.riser_id && riser" class="flex flex-column align-items-start justify-content-center">
             <h3 class="text-gray-700 mt-0 mb-2">Riser Label</h3>
             <p class="my-0">{{ riserLabel }}</p>
         </div>
