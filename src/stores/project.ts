@@ -13,20 +13,7 @@ export const useProjectStore = defineStore('project-store', () => {
           response.json()
         )
         .then((data) => {
-          try {
-            fetch(`http://localhost:3000/risers?projectId=${projectId}`)
-              .then((response) => 
-                response.json()
-              )
-              .then((riserData) => {
-                project.value = {
-                  ...data[0],
-                  risers: riserData
-                }
-              })
-          } catch (error) {
-            console.error(error);
-          }
+          project.value = data
         })
     } catch (error) {
       console.error(error);
