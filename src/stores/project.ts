@@ -8,7 +8,7 @@ export const useProjectStore = defineStore('project-store', () => {
 
   const getProject = async (projectId) => {
     try {
-      await fetch(`http://localhost:3000/projects?id=${projectId}`)
+      await fetch(`http://localhost:8080/projects/${projectId}`)
         .then((response) => 
           response.json()
         )
