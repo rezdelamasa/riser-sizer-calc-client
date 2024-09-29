@@ -8,25 +8,12 @@ export const useProjectStore = defineStore('project-store', () => {
 
   const getProject = async (projectId) => {
     try {
-      await fetch(`http://localhost:3000/projects?id=${projectId}`)
+      await fetch(`http://localhost:8080/projects/${projectId}`)
         .then((response) => 
           response.json()
         )
         .then((data) => {
-          try {
-            fetch(`http://localhost:3000/risers?projectId=${projectId}`)
-              .then((response) => 
-                response.json()
-              )
-              .then((riserData) => {
-                project.value = {
-                  ...data[0],
-                  risers: riserData
-                }
-              })
-          } catch (error) {
-            console.error(error);
-          }
+          project.value = data
         })
     } catch (error) {
       console.error(error);
@@ -55,14 +42,12 @@ export const useProjectStore = defineStore('project-store', () => {
       projectId,
       sourceFloor,
       label,
-      totalSizes: {
-        cold: "",
-        hot: "",
-      }
+      coldSize: "",
+      hotSize: "",
     }
 
     try {
-      await fetch(`http://localhost:3000/risers`, 
+      await fetch(`http://localhost:8080/risers`, 
       {
         method: "POST",
         headers: {
@@ -73,12 +58,29 @@ export const useProjectStore = defineStore('project-store', () => {
       })
       .then((res) => res.json())
       .then((data) => {
-        project.value.risers.push(data);
+        project.value.projectRisers.push(data);
       })
     } catch (error) {
       console.error(error);
     }
   }
 
-  return { project, riserLabel, getProject, getRiserLabel, postRiser }
+  const deleteRiser = async (riserId) => {
+    console.log(riserId)
+
+    try {
+      await fetch(`http://localhost:8080/risers/${riserId}`,
+      {
+        method: "DELETE"
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        project.value.projectRisers = project.value.projectRisers.filter(riser => riser.id != data.id)
+      })
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+  return { project, riserLabel, getProject, getRiserLabel, postRiser, deleteRiser }
 })
