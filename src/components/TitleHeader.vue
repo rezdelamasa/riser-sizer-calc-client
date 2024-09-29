@@ -24,6 +24,7 @@ onMounted(async () => {
     }
     if(params.branch_id) {
         await getBranch(params.branch_id)
+        branchLabel.value = branch.value.label
     }
 })
 
