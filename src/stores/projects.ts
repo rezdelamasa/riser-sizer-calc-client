@@ -7,7 +7,7 @@ export const useProjectsStore = defineStore('projects-store', () => {
 
   const getProjects = async () => {
     try {
-      await fetch('http://localhost:3000/projects')
+      await fetch('http://localhost:8080/projects')
         .then((response) => 
           response.json()
         )
@@ -32,7 +32,7 @@ export const useProjectsStore = defineStore('projects-store', () => {
     }
 
     try {
-      await fetch(`http://localhost:3000/projects`, 
+      await fetch(`http://localhost:8080/projects`, 
       {
         method: "POST",
         headers: {
