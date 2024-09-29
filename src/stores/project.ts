@@ -58,7 +58,7 @@ export const useProjectStore = defineStore('project-store', () => {
       })
       .then((res) => res.json())
       .then((data) => {
-        project.value.risers.push(data);
+        project.value.projectRisers.push(data);
       })
     } catch (error) {
       console.error(error);
