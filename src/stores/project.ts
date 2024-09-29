@@ -5,6 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 export const useProjectStore = defineStore('project-store', () => {
   const project = ref(null)
   const riserLabel = ref(null)
+  const riser = ref(null)
 
   const getProject = async (projectId) => {
     try {
@@ -17,6 +18,20 @@ export const useProjectStore = defineStore('project-store', () => {
         })
     } catch (error) {
       console.error(error);
+    }
+  }
+
+  const getRiser = async (riserId) => {
+    try {
+      await fetch(`http://localhost:8080/risers/${riserId}`)
+        .then((response) => 
+          response.json()
+        )
+        .then((data) => {
+          riser.value = data
+        })
+      } catch (error) {
+        console.error(error);
     }
   }
 
@@ -82,5 +97,5 @@ export const useProjectStore = defineStore('project-store', () => {
     }
   }
 
-  return { project, riserLabel, getProject, getRiserLabel, postRiser, deleteRiser }
+  return { project, riser, riserLabel, getProject, getRiser, getRiserLabel, postRiser, deleteRiser }
 })
