@@ -2,7 +2,7 @@
 import { useBranchesStore } from "@/stores/branches";
 import { useProjectStore } from "@/stores/project"
 import { storeToRefs } from "pinia";
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 const { params } = useRoute()
