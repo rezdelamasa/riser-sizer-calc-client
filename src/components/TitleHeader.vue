@@ -7,7 +7,7 @@ import { useRoute } from "vue-router";
 
 const { params } = useRoute()
 
-const { getProject, getRiserLabel} = useProjectStore()
+const { getProject, getRiser } = useProjectStore()
 const { getBranch } = useBranchesStore()
 
 const riserLabel = ref("")
@@ -18,7 +18,9 @@ onMounted(async () => {
         await getProject(params.project_id)
     }
     if(params.riser_id) {
-        await getRiserLabel(params.riser_id)
+        await getRiser(params.riser_id)
+        if(!riser.value) return;
+        riserLabel.value = riser.value.label
     }
     if(params.branch_id) {
         await getBranch(params.branch_id)
