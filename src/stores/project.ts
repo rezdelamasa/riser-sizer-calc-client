@@ -65,5 +65,22 @@ export const useProjectStore = defineStore('project-store', () => {
     }
   }
 
-  return { project, riserLabel, getProject, getRiserLabel, postRiser }
+  const deleteRiser = async (riserId) => {
+    console.log(riserId)
+
+    try {
+      await fetch(`http://localhost:8080/risers/${riserId}`,
+      {
+        method: "DELETE"
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        project.value.projectRisers = project.value.projectRisers.filter(riser => riser.id != data.id)
+      })
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+  return { project, riserLabel, getProject, getRiserLabel, postRiser, deleteRiser }
 })
