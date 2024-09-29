@@ -55,10 +55,8 @@ export const useProjectStore = defineStore('project-store', () => {
       projectId,
       sourceFloor,
       label,
-      totalSizes: {
-        cold: "",
-        hot: "",
-      }
+      coldSize: "",
+      hotSize: "",
     }
 
     try {
