@@ -46,7 +46,7 @@ export const useBranchesStore = defineStore('branches-store', () => {
     }
 
     try {
-      await fetch(`http://localhost:3000/branches`, 
+      await fetch(`http://localhost:8080/branches`, 
       {
         method: "POST",
         headers: {
