@@ -58,6 +58,10 @@ const createBranch = async () => {
     return toggleCreateDialog()
 }
 
+const deleteBranch = async (branchId) => {
+    await branchesStore.deleteBranch(branchId)
+}
+
 </script>
 <template>
     <main>
