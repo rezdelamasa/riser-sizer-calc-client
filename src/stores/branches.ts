@@ -40,7 +40,6 @@ export const useBranchesStore = defineStore('branches-store', () => {
     const { label, startingFloor, riserId } = branchObj; 
 
     const body = {
-      id: uuidv4(),
       riserId,
       label,
       startingFloor,
