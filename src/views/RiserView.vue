@@ -88,7 +88,7 @@ const deleteBranch = async (branchId) => {
                             <Column>
                                 <template #body="slotProps">
                                     <div class="actions">
-                                        <Button class="actions__button" icon="pi pi-trash" severity="danger"></Button>
+                                        <Button @click="deleteBranch(slotProps.data.id)" class="actions__button" icon="pi pi-trash" severity="danger"></Button>
                                         <Button class="actions__button">
                                             <router-link :to="'/projects/' + slotProps.data.id"><i class="pi pi-external-link" style="color: white;"></i></router-link>
                                         </Button>
