@@ -74,6 +74,8 @@ const deleteBranch = async (branchId) => {
                 <Card class="card">
                     <template v-if="branches" #content>
                         <DataTable :value="branches">
+                            <template #empty> No branches found.</template>
+                            <template #loading> Loading customers data. Please wait. </template>
                             <Column field="label" header="Branch">
                                 <template #body="slotProps">
                                     <router-link :to="path + '/branches/' + slotProps.data.id">{{ slotProps.data.label }}</router-link>
