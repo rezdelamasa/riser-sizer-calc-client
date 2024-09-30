@@ -1,6 +1,7 @@
 <script setup>
 import { ref, computed, onMounted, reactive } from 'vue'
 import { useBranchesStore } from "@/stores/branches"
+import { useProjectStore } from "@/stores/project"
 import { useRoute } from 'vue-router';
 import BackLink from '@/components/BackLink.vue';
 import TitleHeader from '@/components/TitleHeader.vue';
@@ -8,6 +9,7 @@ import { useVuelidate } from '@vuelidate/core'
 import { helpers, required } from '@vuelidate/validators'
 
 const branchesStore = useBranchesStore()
+const projectStore = useProjectStore()
 
 const createDialogVisible = ref(false)
 
@@ -27,6 +29,7 @@ const rules = {
 const v$ = useVuelidate(rules, form)
 
 onMounted(async () => {
+    await projectStore.getRiser(params.riser_id)
     await branchesStore.getBranches(params.riser_id)
     backLink.value = "/projects/" + params.project_id
 })
@@ -55,6 +58,10 @@ const createBranch = async () => {
     return toggleCreateDialog()
 }
 
+const deleteBranch = async (branchId) => {
+    await branchesStore.deleteBranch(branchId)
+}
+
 </script>
 <template>
     <main>
@@ -67,6 +74,8 @@ const createBranch = async () => {
                 <Card class="card">
                     <template v-if="branches" #content>
                         <DataTable :value="branches">
+                            <template #empty> No branches found.</template>
+                            <template #loading> Loading customers data. Please wait. </template>
                             <Column field="label" header="Branch">
                                 <template #body="slotProps">
                                     <router-link :to="path + '/branches/' + slotProps.data.id">{{ slotProps.data.label }}</router-link>
@@ -79,7 +88,7 @@ const createBranch = async () => {
                             <Column>
                                 <template #body="slotProps">
                                     <div class="actions">
-                                        <Button class="actions__button" icon="pi pi-trash" severity="danger"></Button>
+                                        <Button @click="deleteBranch(slotProps.data.id)" class="actions__button" icon="pi pi-trash" severity="danger"></Button>
                                         <Button class="actions__button">
                                             <router-link :to="'/projects/' + slotProps.data.id"><i class="pi pi-external-link" style="color: white;"></i></router-link>
                                         </Button>

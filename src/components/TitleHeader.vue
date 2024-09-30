@@ -2,30 +2,34 @@
 import { useBranchesStore } from "@/stores/branches";
 import { useProjectStore } from "@/stores/project"
 import { storeToRefs } from "pinia";
-import { onMounted } from "vue";
+import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
 
 const { params } = useRoute()
 
-const { getProject, getRiserLabel} = useProjectStore()
+const { getProject, getRiser } = useProjectStore()
 const { getBranch } = useBranchesStore()
+
+const riserLabel = ref("")
+const branchLabel = ref("")
 
 onMounted(async () => {
     if(params.project_id) {
         await getProject(params.project_id)
     }
     if(params.riser_id) {
-        await getRiserLabel(params.riser_id)
+        await getRiser(params.riser_id)
+        if(!riser.value) return;
+        riserLabel.value = riser.value.label
     }
     if(params.branch_id) {
         await getBranch(params.branch_id)
+        branchLabel.value = branch.value.label
     }
 })
 
-const { project, riserLabel } = storeToRefs(useProjectStore())
 const { branch } = storeToRefs(useBranchesStore())
-
-
+const { project, riser } = storeToRefs(useProjectStore())
 
 </script>
 <template>
@@ -34,13 +38,13 @@ const { branch } = storeToRefs(useBranchesStore())
             <h3 class="text-gray-700 mt-0 mb-2">{{ project.name }}</h3>
             <p class="my-0">{{ project.address }}</p>
         </div>
-        <div v-if="params.riser_id && riserLabel" class="flex flex-column align-items-start justify-content-center">
+        <div v-if="params.riser_id && riser" class="flex flex-column align-items-start justify-content-center">
             <h3 class="text-gray-700 mt-0 mb-2">Riser Label</h3>
             <p class="my-0">{{ riserLabel }}</p>
         </div>
         <div v-if="params.branch_id && branch" class="flex flex-column align-items-start justify-content-center">
             <h3 class="text-gray-700 mt-0 mb-2">Branch Label</h3>
-            <p class="my-0">{{ branch.label }}</p>
+            <p class="my-0">{{ branchLabel }}</p>
         </div>
     </header>
 </template>

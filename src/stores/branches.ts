@@ -10,7 +10,7 @@ export const useBranchesStore = defineStore('branches-store', () => {
 
   const getBranches = async (riserId) => {
     try {
-      await fetch(`http://localhost:3000/branches?riserId=${riserId}`)
+      await fetch(`http://localhost:8080/branches?riserId=${riserId}`)
         .then((response) => 
           response.json()
         )
@@ -40,14 +40,13 @@ export const useBranchesStore = defineStore('branches-store', () => {
     const { label, startingFloor, riserId } = branchObj; 
 
     const body = {
-      id: uuidv4(),
       riserId,
       label,
       startingFloor,
     }
 
     try {
-      await fetch(`http://localhost:3000/branches`, 
+      await fetch(`http://localhost:8080/branches`, 
       {
         method: "POST",
         headers: {
@@ -65,5 +64,21 @@ export const useBranchesStore = defineStore('branches-store', () => {
     }
   }
 
-  return { branches, getBranches, branch, getBranch, postBranch }
+  const deleteBranch = async (branchId) => {
+
+    try {
+      await fetch(`http://localhost:8080/branches/${branchId}`,
+      {
+        method: "DELETE"
+      })
+      .then((res) => res.json())
+      .then((data) => {
+        branches.value = branches.value.filter(branch => branch.id != data.id)
+      })
+    } catch (error) {
+        console.log(error);
+    }
+  }
+
+  return { branches, getBranches, branch, getBranch, postBranch, deleteBranch }
 })
